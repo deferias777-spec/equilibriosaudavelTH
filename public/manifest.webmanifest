@@ -1,0 +1,26 @@
+{
+    "name":  "Equilíbrio Saudável",
+    "short_name":  "Equilíbrio",
+    "description":  "Sua área de membros, receitas e bem-estar.",
+    "lang":  "pt-BR",
+    "id":  "/",
+    "start_url":  "/membros",
+    "scope":  "/",
+    "display":  "standalone",
+    "background_color":  "#fff8fc",
+    "theme_color":  "#b77996",
+    "icons":  [
+                  {
+                      "purpose":  "any",
+                      "type":  "image/png",
+                      "sizes":  "192x192",
+                      "src":  "/images/app-icon-192.png"
+                  },
+                  {
+                      "purpose":  "any",
+                      "type":  "image/png",
+                      "sizes":  "512x512",
+                      "src":  "/images/app-icon-512.png"
+                  }
+              ]
+}
