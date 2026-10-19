@@ -1,14 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { registerSW } from 'virtual:pwa-register';
 import './PWAUpdateManager.css';
 
 export default function PWAUpdateManager() {
+  const [installed, setInstalled] = useState(false);
   const [updateAvailable, setUpdateAvailable] = useState(false);
-  const [offlineReady, setOfflineReady] = useState(false);
+  const [checking, setChecking] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const registrationRef = useRef(null);
+  const updateFunctionRef = useRef(null);
+  const checkingRef = useRef(false);
+  const mountedRef = useRef(false);
 
   useEffect(() => {
+    mountedRef.current = true;
+
+    const standalone =
+      window.matchMedia('(display-mode: standalone)').matches ||
+      window.navigator.standalone === true;
+
+    setInstalled(standalone);
+
     let disposed = false;
     let registration = null;
+    let checkInterval = null;
 
     const updateSW = registerSW({
       immediate: true,
@@ -16,122 +33,175 @@ export default function PWAUpdateManager() {
       onNeedRefresh() {
         if (!disposed) {
           setUpdateAvailable(true);
-        }
-      },
-
-      onOfflineReady() {
-        if (!disposed) {
-          setOfflineReady(true);
+          setChecking(false);
+          checkingRef.current = false;
         }
       },
 
       onRegisteredSW(swUrl, swRegistration) {
-        registration = swRegistration;
+        registration = swRegistration || null;
+        registrationRef.current = registration;
 
         if (!registration) return;
 
-        const checkForUpdates = () => {
-          if (!navigator.onLine) return;
+        const check = () => {
+          if (disposed || !navigator.onLine) return;
 
           registration.update().catch(() => {
-            // Falhas temporarias de rede nao interrompem o app.
+            // Falhas de rede nao interrompem o aplicativo.
           });
         };
 
-        const onVisibilityChange = () => {
-          if (document.visibilityState === 'visible') {
-            checkForUpdates();
-          }
-        };
+        check();
 
-        window.addEventListener('focus', checkForUpdates);
-        document.addEventListener(
-          'visibilitychange',
-          onVisibilityChange
-        );
+        // Verificacao periodica enquanto o app estiver aberto.
+        checkInterval = window.setInterval(check, 60 * 60 * 1000);
+      },
 
-        checkForUpdates();
-
-        cleanupListeners = () => {
-          window.removeEventListener('focus', checkForUpdates);
-          document.removeEventListener(
-            'visibilitychange',
-            onVisibilityChange
-          );
-        };
+      onRegisterError(error) {
+        console.error('PWA: erro no registro', error);
       }
     });
 
-    let cleanupListeners = () => {};
+    updateFunctionRef.current = updateSW;
 
-    updateHandler = updateSW;
+    const checkOnReturn = () => {
+      if (document.visibilityState !== 'visible') return;
+      if (!navigator.onLine) return;
+
+      registrationRef.current?.update().catch(() => {});
+    };
+
+    const checkOnFocus = () => {
+      if (!navigator.onLine) return;
+
+      registrationRef.current?.update().catch(() => {});
+    };
+
+    document.addEventListener('visibilitychange', checkOnReturn);
+    window.addEventListener('focus', checkOnFocus);
 
     return () => {
       disposed = true;
-      cleanupListeners();
+      mountedRef.current = false;
+
+      document.removeEventListener('visibilitychange', checkOnReturn);
+      window.removeEventListener('focus', checkOnFocus);
+
+      if (checkInterval) {
+        window.clearInterval(checkInterval);
+      }
     };
   }, []);
 
-  const installUpdate = async () => {
-    if (!updateHandler) return;
+  const checkForUpdates = async () => {
+    if (checkingRef.current) return;
 
-    setUpdateAvailable(false);
+    if (!navigator.onLine) {
+      setMessage('Conecte-se à internet para verificar atualizações.');
+      return;
+    }
+
+    checkingRef.current = true;
+    setChecking(true);
+    setMessage('');
 
     try {
-      await updateHandler(true);
-    } catch {
-      setUpdateAvailable(true);
+      const registration =
+        registrationRef.current ||
+        (await navigator.serviceWorker?.getRegistration());
+
+      if (!registration) {
+        setMessage('Service Worker ainda não está disponível. Reabra o aplicativo.');
+        return;
+      }
+
+      await registration.update();
+
+      if (registration.waiting) {
+        setUpdateAvailable(true);
+      } else {
+        setMessage(
+          'Verificação concluída. Se houver uma nova versão, o aviso aparecerá quando estiver pronta.'
+        );
+      }
+    } catch (error) {
+      setMessage('Não foi possível verificar agora. Tente novamente.');
+    } finally {
+      checkingRef.current = false;
+
+      if (mountedRef.current) {
+        setChecking(false);
+      }
     }
   };
 
-  return (
-    <>
-      {updateAvailable && (
-        <div
-          className="es-pwa-update"
-          role="status"
-          aria-live="polite"
-        >
-          <div className="es-pwa-update__icon">
-            <img
-              src="/images/favicon.png"
-              alt=""
-            />
-          </div>
+  const applyUpdate = async () => {
+    if (!updateFunctionRef.current) {
+      setMessage('Atualização ainda não disponível.');
+      return;
+    }
 
-          <div className="es-pwa-update__content">
-            <strong>Uma nova versão está disponível</strong>
-            <span>
-              Atualize para aproveitar as melhorias
-              do Equilíbrio Saudável.
-            </span>
+    setChecking(true);
+
+    try {
+      await updateFunctionRef.current(true);
+    } catch (error) {
+      setChecking(false);
+      setMessage('Não foi possível atualizar. Tente novamente.');
+    }
+  };
+
+  if (!installed && !updateAvailable) {
+    return null;
+  }
+
+  return createPortal(
+    <div className="es-pwa-controls">
+      {updateAvailable ? (
+        <div className="es-pwa-update-banner" role="status">
+          <img src="/images/favicon.png" alt="" />
+
+          <div className="es-pwa-update-text">
+            <strong>Nova versão disponível</strong>
+            <span>Atualize para receber as melhorias.</span>
           </div>
 
           <button
             type="button"
-            onClick={installUpdate}
+            onClick={applyUpdate}
+            disabled={checking}
           >
-            Atualizar agora
+            {checking ? 'Atualizando...' : 'Atualizar agora'}
           </button>
         </div>
-      )}
-
-      {offlineReady && !updateAvailable && (
-        <div
-          className="es-pwa-offline-ready"
-          role="status"
-        >
-          O aplicativo está preparado para acesso básico offline.
+      ) : (
+        <div className="es-pwa-update-check">
           <button
             type="button"
-            onClick={() => setOfflineReady(false)}
+            onClick={checkForUpdates}
+            disabled={checking}
+            aria-label="Verificar atualizações do aplicativo"
           >
-            Fechar
+            <img src="/images/favicon.png" alt="" />
+            {checking ? 'Verificando...' : 'Verificar atualização'}
           </button>
+
+          {message && (
+            <div className="es-pwa-update-message" role="status">
+              <span>{message}</span>
+              <button
+                type="button"
+                aria-label="Fechar mensagem"
+                onClick={() => setMessage('')}
+              >
+                ×
+              </button>
+            </div>
+          )}
         </div>
       )}
-    </>
+    </div>,
+    document.body
   );
 }
-
-let updateHandler = null;

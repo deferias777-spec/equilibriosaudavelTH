@@ -1,110 +1,151 @@
-.es-pwa-update,
-.es-pwa-update * {
+.es-pwa-controls,
+.es-pwa-controls * {
   box-sizing: border-box;
 }
 
-.es-pwa-update {
+.es-pwa-controls {
   position: fixed;
-  left: 50%;
-  bottom: max(22px,env(safe-area-inset-bottom));
-  transform: translateX(-50%);
   z-index: 2147483000;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  width: min(94vw,650px);
-  padding: 15px;
-  border: 1px solid #ecd8e4;
-  border-radius: 19px;
-  background: #fffafd;
-  box-shadow: 0 18px 65px rgba(50,29,43,.2);
-  color: #594251;
+  right: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  width: min(94vw, 480px);
+  pointer-events: none;
+  font-family: inherit;
 }
 
-.es-pwa-update__icon {
-  flex: 0 0 52px;
-  width: 52px;
-  height: 52px;
+.es-pwa-update-check,
+.es-pwa-update-banner {
+  pointer-events: auto;
 }
 
-.es-pwa-update__icon img {
-  width: 100%;
-  height: 100%;
-  border-radius: 13px;
-  object-fit: cover;
-}
-
-.es-pwa-update__content {
-  flex: 1;
+.es-pwa-update-check {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  min-width: 0;
+  align-items: flex-end;
+  gap: 8px;
 }
 
-.es-pwa-update__content strong {
-  font-size: 13px;
-}
-
-.es-pwa-update__content span {
-  color: #987f90;
+.es-pwa-update-check > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 8px 14px 8px 8px;
+  border: 1px solid #ead8e4;
+  border-radius: 999px;
+  background: #fffafd;
+  color: #775368;
   font-size: 11px;
-  line-height: 1.6;
-}
-
-.es-pwa-update > button {
-  flex-shrink: 0;
-  padding: 12px 15px;
-  border: 0;
-  border-radius: 11px;
-  background: #a86e91;
-  color: white;
-  font-size: 12px;
-  font-weight: 750;
+  font-weight: 700;
+  box-shadow: 0 8px 30px rgba(66,35,55,.14);
   cursor: pointer;
 }
 
-.es-pwa-offline-ready {
-  position: fixed;
-  left: 50%;
-  bottom: 20px;
-  transform: translateX(-50%);
-  z-index: 2147483000;
-  width: min(94vw,440px);
-  padding: 15px;
-  border: 1px solid #ead8e4;
-  border-radius: 15px;
-  background: #fffafd;
-  box-shadow: 0 12px 35px rgba(50,29,43,.15);
-  color: #604b59;
-  font-size: 12px;
-  text-align: center;
+.es-pwa-update-check > button img {
+  width: 27px;
+  height: 27px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-.es-pwa-offline-ready button {
-  margin-left: 12px;
+.es-pwa-update-check button:disabled,
+.es-pwa-update-banner button:disabled {
+  opacity: .65;
+  cursor: wait;
+}
+
+.es-pwa-update-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 340px;
+  padding: 12px 14px;
+  border: 1px solid #eedde8;
+  border-radius: 13px;
+  background: #fffafd;
+  color: #795e70;
+  font-size: 11px;
+  line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(66,35,55,.13);
+}
+
+.es-pwa-update-message button {
   border: 0;
   background: transparent;
-  color: #a86e91;
+  color: #795e70;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.es-pwa-update-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ead8e4;
+  border-radius: 18px;
+  background: #fffafd;
+  box-shadow: 0 15px 45px rgba(66,35,55,.2);
+}
+
+.es-pwa-update-banner > img {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.es-pwa-update-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.es-pwa-update-text strong {
+  color: #624559;
+  font-size: 12px;
+}
+
+.es-pwa-update-text span {
+  color: #967b8b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.es-pwa-update-banner > button {
+  padding: 11px 13px;
+  border: 0;
+  border-radius: 11px;
+  background: #a86e91;
+  color: #fff;
+  font-size: 11px;
   font-weight: 700;
   cursor: pointer;
 }
 
-@media(max-width:600px) {
-  .es-pwa-update {
+@media (max-width: 600px) {
+  .es-pwa-controls {
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: calc(100vw - 24px);
+  }
+
+  .es-pwa-update-banner {
     flex-wrap: wrap;
-    gap: 12px;
-    padding: 13px;
-    bottom: max(12px,env(safe-area-inset-bottom));
   }
 
-  .es-pwa-update__icon {
-    flex-basis: 43px;
-    width: 43px;
-    height: 43px;
-  }
-
-  .es-pwa-update > button {
+  .es-pwa-update-banner > button {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .es-pwa-controls * {
+    scroll-behavior: auto;
   }
 }
