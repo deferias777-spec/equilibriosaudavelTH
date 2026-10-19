@@ -1,0 +1,228 @@
+.es-install-promo,
+.es-install-promo * {
+  box-sizing: border-box;
+}
+
+.es-install-promo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 30px auto 0;
+  padding: 22px 25px;
+  border: 1px solid #ead8e4;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0% 0%,rgba(245,198,220,.28),transparent 40%),
+    linear-gradient(115deg,#fffafc,#f8edf5);
+  box-shadow: 0 15px 45px rgba(91,53,78,.07);
+}
+
+.es-install-promo-icon {
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  padding: 5px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 9px 25px rgba(125,79,109,.12);
+}
+
+.es-install-promo-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.es-install-promo-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.es-install-promo-copy > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #a87894;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.es-install-promo-copy h3 {
+  margin: 0 0 8px;
+  color: #503b49;
+  font-family: Georgia,serif;
+  font-size: clamp(20px,2.3vw,27px);
+  line-height: 1.2;
+}
+
+.es-install-promo-copy p {
+  margin: 0;
+  color: #927e8b;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.es-install-promo-button,
+.es-install-confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 14px;
+  background: #a86e91;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background .2s,transform .2s;
+}
+
+.es-install-promo-button:hover,
+.es-install-confirm:hover {
+  background: #925a7d;
+  transform: translateY(-2px);
+}
+
+.es-install-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(43,29,40,.58);
+  backdrop-filter: blur(9px);
+}
+
+.es-install-dialog {
+  position: relative;
+  width: min(100%,620px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 35px;
+  border: 1px solid #f0deea;
+  border-radius: 26px;
+  background: #fffbfd;
+  box-shadow: 0 30px 90px rgba(38,20,33,.2);
+}
+
+.es-install-close {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #eddce7;
+  border-radius: 11px;
+  background: white;
+  color: #735767;
+  cursor: pointer;
+}
+
+.es-install-dialog-icon {
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 9px 25px rgba(125,79,109,.13);
+}
+
+.es-install-eyebrow {
+  color: #ad7898;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.es-install-dialog h2 {
+  margin: 12px 0;
+  color: #503b49;
+  font-family: Georgia,serif;
+  font-size: clamp(26px,4vw,35px);
+  line-height: 1.2;
+}
+
+.es-install-description {
+  color: #927d8a;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.es-install-platforms {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.es-install-platform {
+  padding: 20px;
+  border: 1px solid #eedde8;
+  border-radius: 17px;
+  background: #fff;
+}
+
+.es-install-platform strong {
+  color: #694c5e;
+  font-size: 13px;
+}
+
+.es-install-platform ol {
+  margin: 14px 0 0;
+  padding-left: 19px;
+  color: #907b88;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.es-install-confirm {
+  width: 100%;
+}
+
+@media(max-width:700px) {
+  .es-install-promo {
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 19px;
+    border-radius: 20px;
+  }
+
+  .es-install-promo-icon {
+    flex-basis: 62px;
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+  }
+
+  .es-install-promo-button {
+    width: 100%;
+  }
+
+  .es-install-dialog {
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+
+  .es-install-platforms {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .es-install-promo-button,
+  .es-install-confirm {
+    transition: none;
+  }
+}

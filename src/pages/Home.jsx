@@ -1,3 +1,4 @@
+import InstallAppPromo from '../components/InstallAppPromo';
 import HomeCommunityPromo from '../components/HomeCommunityPromo';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -270,7 +271,8 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+        <InstallAppPromo />
+</section>
 
       <section className="v5-about" id="sobre">
         <div className="v5-container v5-about__layout">
