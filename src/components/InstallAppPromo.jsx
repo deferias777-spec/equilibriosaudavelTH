@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom';
 import React, { useEffect, useState } from 'react';
 import { Smartphone, ArrowUpRight, X } from 'lucide-react';
 import './InstallAppPromo.css';
@@ -50,7 +51,7 @@ export default function InstallAppPromo() {
         </button>
       </div>
 
-      {isOpen && (
+      {isOpen && createPortal(
         <div
           className="es-install-overlay"
           onMouseDown={(event) => {
@@ -125,7 +126,8 @@ export default function InstallAppPromo() {
               Entendi
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

@@ -226,3 +226,36 @@
     transition: none;
   }
 }
+/* Modal de instalacao acima de todas as secoes */
+.es-install-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.es-install-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(100%,620px);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  margin: auto;
+}
+
+@media(max-width:700px) {
+  .es-install-overlay {
+    padding: 12px;
+    align-items: flex-start !important;
+  }
+
+  .es-install-dialog {
+    width: 100%;
+    max-height: calc(100dvh - 24px);
+    margin: auto;
+  }
+}
