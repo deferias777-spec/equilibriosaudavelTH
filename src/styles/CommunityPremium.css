@@ -1,0 +1,132 @@
+/*
+  Equilibrio Saudavel
+  Comunidade Premium v1
+
+  Estilos aplicados apenas a classes existentes
+  e elementos internos da comunidade.
+*/
+
+/* Perfil oficial */
+
+.es-official-verified {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 9px;
+  filter: drop-shadow(0 4px 8px rgba(36,137,237,.22));
+}
+
+/* Cards de comunidade */
+
+[class*="community"] .card-surface,
+[class*="social"] .card-surface {
+  border: 1px solid rgba(184,125,161,.18);
+  border-radius: 25px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.97),rgba(255,250,253,.94));
+  box-shadow:
+    0 18px 48px rgba(104,61,90,.065),
+    inset 0 1px 0 rgba(255,255,255,.85);
+}
+
+/* Campos */
+
+[class*="community"] textarea,
+[class*="community"] input:not([type="checkbox"]),
+[class*="social"] textarea {
+  max-width: 100%;
+  border-radius: 15px;
+  border: 1px solid #ecd9e5;
+  background: #fffbfe;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+[class*="community"] textarea:focus,
+[class*="community"] input:focus,
+[class*="social"] textarea:focus {
+  outline: none;
+  border-color: #b47fa4;
+  box-shadow: 0 0 0 4px rgba(180,127,164,.12);
+}
+
+/* Botoes */
+
+[class*="community"] button,
+[class*="social"] button {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    background .22s ease;
+}
+
+[class*="community"] button:hover:not(:disabled),
+[class*="social"] button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+/* Imagens de publicacoes */
+
+[class*="community"] img,
+[class*="social"] img {
+  max-width: 100%;
+}
+
+/* Destaques e avatar */
+
+[class*="highlight"] img,
+[class*="avatar"] img {
+  object-fit: cover;
+}
+
+/* Tipografia */
+
+[class*="community"] h2,
+[class*="community"] h3,
+[class*="social"] h2,
+[class*="social"] h3 {
+  letter-spacing: -.025em;
+}
+
+/* Estados vazios */
+
+[class*="empty"] {
+  border-radius: 20px;
+}
+
+/* Responsividade */
+
+@media(max-width:768px) {
+  [class*="community"],
+  [class*="social"] {
+    min-width: 0;
+  }
+
+  [class*="community"] .card-surface,
+  [class*="social"] .card-surface {
+    border-radius: 19px;
+  }
+
+  [class*="community"] button,
+  [class*="social"] button {
+    max-width: 100%;
+  }
+}
+
+@media(max-width:480px) {
+  [class*="community"] h2,
+  [class*="social"] h2 {
+    overflow-wrap: anywhere;
+  }
+
+  [class*="community"] textarea,
+  [class*="social"] textarea {
+    width: 100%;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  [class*="community"] *,
+  [class*="social"] * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

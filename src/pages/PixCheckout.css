@@ -1,0 +1,13 @@
+.pix-page{background:#fff2f5;min-height:85vh;padding:55px 16px;display:flex;justify-content:center}
+.pix-card{background:white;width:100%;max-width:510px;height:fit-content;padding:35px;border-radius:24px;box-shadow:0 12px 40px #ad6b831a}
+.pix-card h1{font-size:32px;color:#493c42;margin:18px 0 10px}
+.pix-card p{color:#806f77;margin:12px 0}
+.pix-price{font-size:42px;font-weight:700;color:#ad6b83;margin:22px 0}
+.pix-card label{display:block;margin:14px 0 6px}
+.pix-card input,.pix-card textarea{width:100%;border:1px solid #f3dce2;border-radius:12px;padding:13px}
+.pix-card button{background:#ad6b83;color:white;border-radius:12px;padding:14px;width:100%;margin-top:20px;font-weight:600}
+.pix-card button:disabled{opacity:.6}
+.pix-result{text-align:center}
+.pix-result img{width:260px;max-width:100%;margin:20px auto}
+.pix-result textarea{text-align:left;overflow-wrap:anywhere}
+.pix-error{color:#b91c1c!important}

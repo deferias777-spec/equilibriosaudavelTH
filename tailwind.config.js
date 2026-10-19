@@ -1,0 +1,1 @@
+export default {content:['./index.html','./src/**/*.{js,jsx}'],theme:{extend:{colors:{pinkbrand:'#FDB4BF',roseink:'#493C42',rosewood:'#AD6B83',soft:'#FFF2F5'},fontFamily:{sans:['Inter','sans-serif'],display:['Georgia','serif']}}},plugins:[]};

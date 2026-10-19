@@ -1,0 +1,1844 @@
+/* HOME PREMIUM V5 - EQUILIBRIO SAUDAVEL */
+
+.v5-home {
+  --v5-ink: #42363c;
+  --v5-rose: #a46c80;
+  --v5-muted: #81737a;
+  color: var(--v5-ink);
+  overflow: hidden;
+}
+
+.v5-home * { box-sizing: border-box; }
+
+.v5-home section { scroll-margin-top: 100px; }
+
+.v5-container {
+  width: min(1220px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.v5-eyebrow {
+  display: inline-block;
+  color: #ae7388;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.v5-home h2 {
+  color: #44373d;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(38px, 4.3vw, 60px);
+  font-weight: 400;
+  letter-spacing: -1.7px;
+  line-height: 1.16;
+}
+
+.v5-home h2 em {
+  color: #a46c80;
+  font-weight: 400;
+}
+
+.v5-home p {
+  line-height: 1.9;
+}
+
+.v5-primary-button,
+.v5-outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 15px 25px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+
+.v5-primary-button {
+  color: #fff;
+  background: #a46c80;
+}
+
+.v5-primary-button:hover {
+  color: #fff;
+  background: #89576a;
+  transform: translateY(-2px);
+}
+
+.v5-outline-button {
+  color: #975e73;
+  background: #fff;
+  border: 1px solid #e5cbd4;
+}
+
+.v5-outline-button:hover {
+  background: #fff3f6;
+}
+
+.v5-platform {
+  padding: 110px 0 120px;
+  background: linear-gradient(135deg, #fbf7f5 0%, #f8f0f0 100%);
+}
+
+.v5-platform__layout {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  align-items: center;
+  gap: clamp(45px, 6vw, 90px);
+}
+
+.v5-platform__copy h2 {
+  margin: 19px 0 25px;
+}
+
+.v5-lead {
+  color: #81727a;
+  font-size: 15px;
+  max-width: 510px;
+}
+
+.v5-module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  margin: 35px 0;
+}
+
+.v5-module {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+.v5-module__icon {
+  display: grid;
+  flex: 0 0 49px;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border: 1px solid #eedde2;
+  border-radius: 15px;
+  color: #a46c80;
+  background: #fff;
+}
+
+.v5-module strong {
+  display: block;
+  color: #493941;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.v5-module p {
+  color: #83747c;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.v5-availability-note {
+  margin-top: 14px;
+  color: #97858c;
+  font-size: 11px;
+}
+
+/* CELULARES */
+
+.v5-platform__visual {
+  position: relative;
+  min-height: 680px;
+  isolation: isolate;
+}
+
+.v5-platform__halo {
+  position: absolute;
+  z-index: -1;
+  width: 570px;
+  height: 570px;
+  max-width: 100%;
+  left: 0;
+  top: 60px;
+  border: 1px solid #ebd4db;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f4e2e7 0%, #f8eef0 53%, transparent 70%);
+}
+
+.v5-phone {
+  position: absolute;
+  width: 246px;
+  height: 510px;
+  padding: 9px;
+  border: 4px solid #302b30;
+  border-radius: 42px;
+  background: #29272b;
+  box-shadow: 12px 30px 50px rgba(65, 44, 54, .21);
+}
+
+.v5-phone--dashboard {
+  z-index: 2;
+  left: 7%;
+  top: 78px;
+  transform: rotate(-12deg);
+}
+
+.v5-phone--calculator {
+  z-index: 3;
+  left: 42%;
+  top: 155px;
+  transform: rotate(8deg);
+}
+
+.v5-phone__screen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  padding: 22px 13px 15px;
+  border-radius: 30px;
+  background: #fffdfc;
+}
+
+.v5-phone__island {
+  position: absolute;
+  z-index: 5;
+  top: 14px;
+  left: 50%;
+  width: 75px;
+  height: 19px;
+  border-radius: 20px;
+  transform: translateX(-50%);
+  background: #27252a;
+}
+
+.v5-phone__status {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  font-weight: 800;
+  margin-bottom: 23px;
+}
+
+.v5-phone__brand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #a46c80;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.v5-phone__greeting {
+  margin: 20px 0;
+}
+
+.v5-phone__greeting small,
+.v5-phone__summary > span,
+.v5-phone__form > span {
+  color: #a46c80;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.v5-phone__greeting h3 {
+  margin: 7px 0 5px;
+  color: #45373e;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.v5-phone__greeting p {
+  color: #8c7e85;
+  font-size: 9px;
+}
+
+.v5-phone__summary {
+  padding: 18px 14px;
+  border-radius: 16px;
+  background: #f7e9ed;
+}
+
+.v5-phone__summary strong {
+  display: block;
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.v5-phone__progress {
+  height: 6px;
+  border-radius: 20px;
+  background: #e5cdd6;
+  overflow: hidden;
+  margin: 12px 0 8px;
+}
+
+.v5-phone__progress i {
+  display: block;
+  width: 58%;
+  height: 100%;
+  border-radius: 20px;
+  background: #a46c80;
+}
+
+.v5-phone__summary small {
+  color: #947f88;
+  font-size: 8px;
+}
+
+.v5-phone__mini-title {
+  margin: 21px 0 12px;
+  color: #493941;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.v5-phone__tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+
+.v5-phone__tiles > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 13px;
+  border: 1px solid #f0e4e7;
+  border-radius: 12px;
+  color: #a46c80;
+  background: #fff;
+}
+
+.v5-phone__tiles span {
+  color: #65555d;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.v5-phone__bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 13px 8px 17px;
+  border-top: 1px solid #f1e8eb;
+  color: #a46c80;
+  background: #fff;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.v5-phone__back {
+  color: #a46c80;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.v5-phone__back span {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.v5-phone__form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 15px;
+}
+
+.v5-phone__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #5d5056;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.v5-phone__form label div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #eadfe3;
+  border-radius: 9px;
+  background: #fff;
+  color: #463b40;
+  font-size: 12px;
+}
+
+.v5-phone__form label small {
+  color: #9e8d95;
+  font-size: 9px;
+}
+
+.v5-phone__calculate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 9px;
+  background: #a46c80;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.v5-phone__form p {
+  color: #9d8c94;
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.v5-floating-note {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 15px;
+  border: 1px solid #f0e8ea;
+  border-radius: 13px;
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 12px 30px rgba(74, 49, 59, .1);
+}
+
+.v5-floating-note--top { top: 105px; right: 0; }
+.v5-floating-note--bottom { bottom: 32px; left: 0; }
+
+.v5-floating-note__icon {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 10px;
+  color: #a46c80;
+  background: #f9eef2;
+}
+
+.v5-floating-note strong {
+  display: block;
+  color: #55444c;
+  font-size: 10px;
+}
+
+.v5-floating-note small {
+  color: #95838b;
+  font-size: 8px;
+}
+
+/* BIO */
+
+.v5-about {
+  padding: 120px 0;
+  background: #fffdfc;
+}
+
+.v5-about__layout {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: clamp(50px, 8vw, 130px);
+}
+
+.v5-about__portrait {
+  position: relative;
+  height: 570px;
+  overflow: hidden;
+  border-radius: 230px 230px 24px 24px;
+  background: linear-gradient(145deg, #e9d2da, #f6eae8);
+}
+
+.v5-about__portrait > img {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.v5-about__placeholder {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  color: #a46c80;
+  font-family: Georgia, serif;
+  font-size: 26px;
+}
+
+.v5-about__placeholder small {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+.v5-about__copy h2 { margin: 17px 0 24px; }
+
+.v5-about__copy p {
+  margin-bottom: 17px;
+  color: #81727a;
+  font-size: 15px;
+}
+
+.v5-about__copy .v5-outline-button { margin-top: 20px; }
+
+/* RECEITAS */
+
+.v5-food {
+  padding: 110px 0 120px;
+  background: #faf4f2;
+}
+
+.v5-section-heading {
+  max-width: 770px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.v5-section-heading h2 { margin: 17px 0 24px; }
+
+.v5-section-heading p {
+  color: #81727a;
+  font-size: 15px;
+}
+
+.v5-everyday {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 65px;
+}
+
+.v5-everyday > span {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 20px;
+  border: 1px solid #eadce0;
+  border-radius: 15px;
+  background: #fff;
+  color: #55444c;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.v5-everyday__number {
+  color: #b17a8d;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.v5-food__subheading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 27px;
+}
+
+.v5-food__subheading h3 {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.v5-food__subheading > span {
+  color: #8d7c84;
+  font-size: 12px;
+}
+
+.v5-recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.v5-recipes-grid > * { min-width: 0; }
+
+.v5-recipes-grid img {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+}
+
+.v5-recipe-note,
+.v5-empty {
+  margin-top: 25px;
+  color: #98878e;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* CONTEUDO EDUCATIVO */
+
+.v5-mounjaro {
+  padding: 110px 0;
+  background: #fffdfc;
+}
+
+.v5-mounjaro__layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.v5-mounjaro__copy h2 {
+  margin: 18px 0 23px;
+}
+
+.v5-mounjaro__copy > p {
+  color: #81727a;
+  font-size: 15px;
+}
+
+.v5-mounjaro__points {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.v5-mounjaro__points span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #64545c;
+  font-size: 13px;
+}
+
+.v5-mounjaro__points svg { color: #a46c80; }
+
+.v5-medical-note {
+  font-size: 11px !important;
+  color: #998990 !important;
+}
+
+.v5-mounjaro__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 470px;
+  border-radius: 230px 230px 25px 25px;
+  background: radial-gradient(circle at 50% 40%, #f9eeee, #f0dde3);
+}
+
+.v5-mounjaro__plate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  width: 290px;
+  height: 290px;
+  border: 17px solid #fff;
+  border-radius: 50%;
+  background: #f9f1f0;
+  box-shadow: 0 15px 35px rgba(93, 60, 73, .09);
+  text-align: center;
+}
+
+.v5-mounjaro__plate-icon { color: #a46c80; }
+
+.v5-mounjaro__plate > span:last-child {
+  color: #785766;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.v5-mounjaro__tag {
+  position: absolute;
+  bottom: 38px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 19px;
+  border-radius: 12px;
+  background: #fff;
+  color: #a46c80;
+  font-size: 12px;
+  font-weight: 750;
+  box-shadow: 0 12px 30px rgba(74,49,59,.08);
+}
+
+/* OFERTA UNICA */
+
+.v5-final {
+  padding: 100px 0;
+  background: #faf5f4;
+}
+
+.v5-final__card {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 65px;
+  padding: clamp(35px, 5vw, 75px);
+  border: 1px solid #ead9df;
+  border-radius: 30px;
+  background: #f5e8eb;
+}
+
+.v5-final__copy h2 { margin: 18px 0 23px; }
+
+.v5-final__copy > p {
+  color: #82717a;
+  font-size: 15px;
+}
+
+.v5-final__features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.v5-final__features span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #68555e;
+  font-size: 13px;
+}
+
+.v5-final__features svg { color: #a46c80; }
+
+.v5-final__price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 28px;
+  border-radius: 23px;
+  background: #fff;
+  text-align: center;
+}
+
+.v5-final__price > span {
+  color: #a46c80;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.v5-final__price > strong {
+  margin: 19px 0 9px;
+  color: #493941;
+  font-family: Georgia, serif;
+  font-size: clamp(45px, 5vw, 64px);
+  font-weight: 400;
+}
+
+.v5-final__price > p {
+  color: #85747d;
+  font-size: 12px;
+}
+
+.v5-final__price .v5-primary-button {
+  width: 100%;
+  margin-top: 27px;
+}
+
+.v5-final__login {
+  margin: 22px 0;
+  color: #a46c80;
+  font-size: 13px;
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+
+.v5-final__price > small {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #99858e;
+  font-size: 11px;
+}
+
+.v5-footer {
+  padding: 40px 0;
+  background: #493b42;
+  color: #fff;
+}
+
+.v5-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.v5-footer__inner > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.v5-footer__inner strong {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.v5-footer__inner span,
+.v5-footer__inner p,
+.v5-footer__inner a {
+  color: #e4cfd8;
+  font-size: 12px;
+}
+
+.v5-footer__inner a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+@media (max-width: 1050px) {
+  .v5-platform__layout,
+  .v5-about__layout,
+  .v5-mounjaro__layout,
+  .v5-final__card {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .v5-platform__visual {
+    width: min(100%, 590px);
+    margin: 0 auto;
+  }
+
+  .v5-platform__copy {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .v5-about__portrait {
+    width: min(100%, 480px);
+    margin: 0 auto;
+  }
+
+  .v5-mounjaro__visual {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .v5-container {
+    width: min(100% - 36px, 1220px);
+  }
+
+  .v5-platform,
+  .v5-about,
+  .v5-food,
+  .v5-mounjaro,
+  .v5-final {
+    padding: 72px 0;
+  }
+
+  .v5-platform__visual {
+    min-height: 460px;
+  }
+
+  .v5-platform__halo {
+    width: 350px;
+    height: 350px;
+    top: 40px;
+  }
+
+  .v5-phone {
+    transform-origin: top left;
+    scale: .7;
+  }
+
+  .v5-phone--dashboard {
+    left: 3%;
+    top: 45px;
+  }
+
+  .v5-phone--calculator {
+    left: 38%;
+    top: 92px;
+  }
+
+  .v5-floating-note--top {
+    top: 25px;
+    right: 0;
+  }
+
+  .v5-floating-note--bottom {
+    bottom: 0;
+    left: 0;
+  }
+
+  .v5-floating-note {
+    padding: 10px;
+  }
+
+  .v5-floating-note small {
+    display: none;
+  }
+
+  .v5-about__portrait {
+    height: 440px;
+  }
+
+  .v5-everyday,
+  .v5-recipes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .v5-everyday {
+    gap: 10px;
+    margin-bottom: 45px;
+  }
+
+  .v5-food__subheading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .v5-mounjaro__visual {
+    min-height: 380px;
+  }
+
+  .v5-mounjaro__plate {
+    width: 240px;
+    height: 240px;
+  }
+
+  .v5-final__card {
+    padding: 28px 20px;
+  }
+
+  .v5-final__price {
+    padding: 35px 20px;
+  }
+
+  .v5-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 390px) {
+  .v5-platform__visual {
+    min-height: 400px;
+  }
+
+  .v5-phone { scale: .59; }
+
+  .v5-phone--calculator {
+    left: 39%;
+    top: 90px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v5-primary-button,
+  .v5-outline-button {
+    transition: none;
+  }
+}
+
+/* REFINAMENTO DOS QUADRADOS E RECEITAS DA HOME */
+
+.v5-home .v5-everyday {
+  gap: 10px;
+  margin-bottom: 42px;
+}
+
+.v5-home .v5-everyday > span {
+  min-height: 58px;
+  padding: 12px 17px;
+  border-radius: 13px;
+  font-size: 13px;
+}
+
+.v5-home .v5-everyday__number {
+  font-size: 17px;
+}
+
+.v5-home .v5-food__subheading {
+  margin-bottom: 22px;
+}
+
+.v5-home .v5-recipes-grid {
+  gap: 20px;
+}
+
+.v5-home .v5-recipes-grid > * {
+  min-width: 0;
+}
+
+.v5-home .v5-recipes-grid img {
+  display: block;
+  width: 100%;
+  height: 185px;
+  max-height: 185px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 700px) {
+  .v5-home .v5-everyday {
+    gap: 8px;
+    margin-bottom: 35px;
+  }
+
+  .v5-home .v5-everyday > span {
+    min-height: 52px;
+    padding: 11px 14px;
+  }
+
+  .v5-home .v5-recipes-grid img {
+    height: 200px;
+    max-height: 200px;
+  }
+}
+
+/* FOTO EDITORIAL - SECAO CUIDADO ALIMENTAR */
+
+.v5-home .v5-mounjaro__visual {
+  position: relative;
+  display: block;
+  min-height: 470px;
+  overflow: hidden;
+  border-radius: 230px 230px 25px 25px;
+  background: #f0dde3;
+}
+
+.v5-home .v5-mounjaro__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.v5-home .v5-mounjaro__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.v5-home .v5-mounjaro__tag {
+  z-index: 2;
+  bottom: 24px;
+  right: 22px;
+  border: 1px solid rgba(255,255,255,.8);
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 700px) {
+  .v5-home .v5-mounjaro__visual {
+    min-height: 380px;
+  }
+}
+
+/* EQUILIBRIO PREMIUM V6 START */
+
+/* ==========================================
+   01. IDENTIDADE VISUAL E CORES
+========================================== */
+
+.v5-home {
+  --v5-ink: #493b43;
+  --v5-rose: #ae7189;
+  --v5-muted: #82747c;
+  --v6-rose: #b77590;
+  --v6-rose-dark: #91546d;
+  --v6-rose-light: #f3dce5;
+  --v6-cream: #fffaf9;
+  --v6-glass: rgba(255,255,255,.72);
+  --v6-border: rgba(180,112,140,.16);
+  --v6-shadow: 0 24px 70px rgba(106,59,78,.09);
+  --v6-ease: cubic-bezier(.22,1,.36,1);
+
+  position: relative;
+  overflow: clip;
+
+  color: var(--v5-ink);
+  background: #fffaf9;
+}
+
+.v5-home h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(40px,4.6vw,72px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.v5-home h2 em {
+  color: var(--v6-rose);
+  font-weight: 500;
+}
+
+.v5-home p {
+  line-height: 1.85;
+}
+
+.v5-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #a56780;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.v5-eyebrow::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  opacity: .65;
+}
+
+/* ==========================================
+   02. SECOES COM TRANSICAO FLUIDA
+========================================== */
+
+.v5-home .v5-platform,
+.v5-home .v5-about,
+.v5-home .v5-food,
+.v5-home .v5-mounjaro,
+.v5-home .v5-final {
+  position: relative;
+  isolation: isolate;
+  border: 0;
+}
+
+.v5-home .v5-platform {
+  padding: clamp(85px,9vw,145px) 0;
+  background:
+    radial-gradient(
+      ellipse 50% 55% at 90% 32%,
+      rgba(236,185,203,.34),
+      transparent 78%
+    ),
+    radial-gradient(
+      ellipse 42% 50% at 4% 90%,
+      rgba(255,255,255,.94),
+      transparent 80%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf9 0%,
+      #fcf2f3 62%,
+      #fffaf9 100%
+    );
+}
+
+.v5-home .v5-about {
+  padding: clamp(85px,9vw,140px) 0;
+  background:
+    radial-gradient(
+      ellipse 45% 55% at 5% 50%,
+      rgba(245,219,228,.40),
+      transparent 85%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf9 0%,
+      #fffdfc 48%,
+      #fff9f8 100%
+    );
+}
+
+.v5-home .v5-food {
+  padding: clamp(85px,9vw,145px) 0;
+  background:
+    radial-gradient(
+      ellipse 42% 55% at 96% 12%,
+      rgba(232,186,202,.28),
+      transparent 82%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 2% 92%,
+      rgba(255,255,255,.82),
+      transparent 80%
+    ),
+    linear-gradient(
+      180deg,
+      #fff9f8 0%,
+      #faf0f0 55%,
+      #fffaf9 100%
+    );
+}
+
+.v5-home .v5-mounjaro {
+  padding: clamp(85px,9vw,140px) 0;
+  background:
+    radial-gradient(
+      ellipse 45% 60% at 85% 50%,
+      rgba(244,217,225,.42),
+      transparent 80%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf9 0%,
+      #fffdfc 50%,
+      #fdf6f6 100%
+    );
+}
+
+.v5-home .v5-final {
+  padding: clamp(85px,9vw,140px) 0;
+  background:
+    radial-gradient(
+      ellipse 55% 65% at 50% 55%,
+      rgba(239,199,213,.24),
+      transparent 80%
+    ),
+    linear-gradient(
+      180deg,
+      #fdf6f6 0%,
+      #fffaf9 100%
+    );
+}
+
+/* ==========================================
+   03. BOTOES PREMIUM COM LUZ
+========================================== */
+
+.v5-home .v5-primary-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 56px;
+  padding: 16px 30px;
+
+  border: 1px solid rgba(255,255,255,.20);
+  border-radius: 100px;
+
+  color: white;
+  background: linear-gradient(
+    115deg,
+    #c68aa2 0%,
+    #ae7189 48%,
+    #91536d 100%
+  );
+
+  box-shadow:
+    0 12px 28px rgba(156,84,111,.22),
+    inset 0 1px 0 rgba(255,255,255,.24);
+
+  transition:
+    transform .35s var(--v6-ease),
+    box-shadow .35s ease,
+    filter .35s ease;
+}
+
+.v5-home .v5-primary-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255,255,255,.24) 48%,
+    transparent 75%
+  );
+  transform: translateX(-125%);
+  transition: transform .7s var(--v6-ease);
+}
+
+.v5-home .v5-primary-button:hover {
+  color: white;
+  background: linear-gradient(
+    115deg,
+    #c68aa2,
+    #9a5a73
+  );
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 42px rgba(156,84,111,.29),
+    0 0 32px rgba(226,157,184,.18);
+}
+
+.v5-home .v5-primary-button:hover::before {
+  transform: translateX(125%);
+}
+
+.v5-home .v5-outline-button {
+  min-height: 56px;
+  padding: 16px 30px;
+
+  border: 1px solid rgba(181,115,142,.27);
+  border-radius: 100px;
+
+  color: #995c75;
+  background: rgba(255,255,255,.78);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow: 0 8px 28px rgba(106,59,78,.045);
+
+  transition:
+    transform .35s var(--v6-ease),
+    border-color .3s,
+    box-shadow .3s,
+    background .3s;
+}
+
+.v5-home .v5-outline-button:hover {
+  background: #fff;
+  border-color: rgba(181,115,142,.60);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(106,59,78,.10);
+}
+
+.v5-home .v5-primary-button svg,
+.v5-home .v5-outline-button svg {
+  transition: transform .3s var(--v6-ease);
+}
+
+.v5-home .v5-primary-button:hover svg,
+.v5-home .v5-outline-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   04. IPHONES MAIS REALISTAS
+========================================== */
+
+.v5-home .v5-platform__visual {
+  filter: drop-shadow(0 30px 45px rgba(80,42,61,.06));
+}
+
+.v5-home .v5-platform__halo {
+  border-color: rgba(183,115,141,.20);
+  background: radial-gradient(
+    circle,
+    rgba(249,226,234,.90) 0%,
+    rgba(244,210,222,.50) 48%,
+    transparent 73%
+  );
+  box-shadow:
+    0 0 100px rgba(222,155,180,.13);
+}
+
+.v5-home .v5-phone {
+  border: 4px solid #252329;
+  background: linear-gradient(
+    135deg,
+    #4a444b,
+    #19181c 55%,
+    #383238
+  );
+
+  box-shadow:
+    15px 35px 65px rgba(47,32,42,.24),
+    0 0 0 1px rgba(255,255,255,.25),
+    inset 0 0 0 1px rgba(255,255,255,.08);
+
+  transition:
+    box-shadow .45s ease,
+    filter .45s ease;
+}
+
+.v5-home .v5-phone--dashboard:hover,
+.v5-home .v5-phone--calculator:hover {
+  filter: brightness(1.035);
+  box-shadow:
+    18px 42px 75px rgba(47,32,42,.31),
+    0 0 0 1px rgba(255,255,255,.22);
+}
+
+.v5-home .v5-phone__screen {
+  background: linear-gradient(
+    180deg,
+    #fffefd 0%,
+    #fff9fb 100%
+  );
+}
+
+.v5-home .v5-phone__summary {
+  background: linear-gradient(
+    135deg,
+    #f9e8ee,
+    #f2dce5
+  );
+  border: 1px solid rgba(181,115,142,.12);
+  box-shadow: 0 8px 22px rgba(120,66,88,.05);
+}
+
+.v5-home .v5-phone__tiles > div {
+  border-color: rgba(181,115,142,.12);
+  box-shadow: 0 5px 14px rgba(100,55,75,.04);
+}
+
+.v5-home .v5-phone__progress i {
+  background: linear-gradient(
+    90deg,
+    #d79ab1,
+    #a56b83
+  );
+}
+
+.v5-home .v5-phone__calculate {
+  background: linear-gradient(
+    120deg,
+    #bd8099,
+    #995a73
+  );
+  box-shadow: 0 6px 14px rgba(153,90,115,.15);
+}
+
+/* ==========================================
+   05. NOTIFICACOES FLUTUANTES GLASS
+========================================== */
+
+.v5-home .v5-floating-note {
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 17px;
+
+  background: rgba(255,255,255,.80);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 48px rgba(89,48,66,.13),
+    inset 0 1px 0 rgba(255,255,255,.75);
+
+  transition:
+    transform .35s var(--v6-ease),
+    box-shadow .35s;
+}
+
+.v5-home .v5-floating-note:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 55px rgba(89,48,66,.17);
+}
+
+.v5-home .v5-floating-note__icon {
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    #fbeff3,
+    #f2dce5
+  );
+}
+
+/* ==========================================
+   06. BIO DA THAIS
+========================================== */
+
+.v5-home .v5-about__portrait {
+  border: 8px solid rgba(255,255,255,.75);
+
+  box-shadow:
+    0 35px 80px rgba(112,65,84,.14),
+    0 0 0 1px rgba(184,115,143,.10);
+
+  transition:
+    box-shadow .4s ease;
+}
+
+.v5-home .v5-about__portrait:hover {
+  box-shadow:
+    0 40px 90px rgba(112,65,84,.20),
+    0 0 0 1px rgba(184,115,143,.15);
+}
+
+.v5-home .v5-about__portrait > img {
+  transition: transform .7s var(--v6-ease);
+}
+
+.v5-home .v5-about__portrait:hover > img {
+  transform: scale(1.035);
+}
+
+.v5-home .v5-about__copy p {
+  color: #756870;
+  line-height: 2;
+}
+
+/* ==========================================
+   07. RECEITAS E CARDS GLASS
+========================================== */
+
+.v5-home .v5-everyday {
+  gap: 14px;
+}
+
+.v5-home .v5-everyday > span {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 68px;
+  padding: 17px 20px;
+
+  border: 1px solid rgba(181,115,142,.15);
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.76);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 10px 30px rgba(100,55,75,.045),
+    inset 0 1px 0 rgba(255,255,255,.85);
+
+  transition:
+    transform .35s var(--v6-ease),
+    box-shadow .35s,
+    border-color .35s;
+}
+
+.v5-home .v5-everyday > span:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181,115,142,.36);
+  box-shadow: 0 20px 45px rgba(100,55,75,.10);
+}
+
+.v5-home .v5-everyday__number {
+  font-size: 21px;
+  color: #ba8298;
+}
+
+.v5-home .v5-recipes-grid {
+  gap: 22px;
+}
+
+.v5-home .v5-recipes-grid > * {
+  overflow: hidden;
+
+  border: 1px solid rgba(181,115,142,.16);
+  border-radius: 25px;
+
+  background: rgba(255,255,255,.90);
+
+  box-shadow:
+    0 16px 40px rgba(100,55,75,.07),
+    inset 0 1px 0 rgba(255,255,255,.80);
+
+  transition:
+    transform .4s var(--v6-ease),
+    box-shadow .4s,
+    border-color .4s;
+}
+
+.v5-home .v5-recipes-grid > *:hover {
+  transform: translateY(-7px);
+  border-color: rgba(181,115,142,.33);
+  box-shadow: 0 30px 65px rgba(100,55,75,.14);
+}
+
+.v5-home .v5-recipes-grid img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  max-height: 190px;
+  object-fit: cover;
+
+  transition:
+    transform .65s var(--v6-ease),
+    filter .45s;
+}
+
+.v5-home .v5-recipes-grid > *:hover img {
+  transform: scale(1.055);
+  filter: saturate(1.06);
+}
+
+.v5-home .v5-food__subheading h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(27px,3vw,38px);
+  letter-spacing: -.03em;
+}
+
+/* ==========================================
+   08. CONTEUDO ALIMENTAR E FOTO
+========================================== */
+
+.v5-home .v5-mounjaro__visual {
+  border: 7px solid rgba(255,255,255,.78);
+
+  box-shadow:
+    0 30px 70px rgba(112,65,84,.14),
+    0 0 0 1px rgba(181,115,142,.08);
+}
+
+.v5-home .v5-mounjaro__photo img {
+  transition: transform .75s var(--v6-ease);
+}
+
+.v5-home .v5-mounjaro__visual:hover
+.v5-mounjaro__photo img {
+  transform: scale(1.045);
+}
+
+.v5-home .v5-mounjaro__tag {
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 15px;
+
+  background: rgba(255,255,255,.82);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: 0 16px 35px rgba(74,49,59,.12);
+}
+
+.v5-home .v5-mounjaro__points span {
+  gap: 14px;
+  font-size: 14px;
+}
+
+/* ==========================================
+   09. OFERTA FINAL PREMIUM
+========================================== */
+
+.v5-home .v5-final__card {
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(183,115,141,.16);
+  border-radius: 36px;
+
+  background:
+    radial-gradient(
+      ellipse 65% 85% at 90% 10%,
+      rgba(255,255,255,.80),
+      transparent 80%
+    ),
+    linear-gradient(
+      125deg,
+      #f8e9ed,
+      #f2dfe6 65%,
+      #f9edef
+    );
+
+  box-shadow:
+    0 30px 85px rgba(110,60,80,.10),
+    inset 0 1px 0 rgba(255,255,255,.85);
+}
+
+.v5-home .v5-final__card::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  top: -190px;
+  right: -100px;
+  border-radius: 50%;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,.60),
+    transparent 72%
+  );
+}
+
+.v5-home .v5-final__price {
+  position: relative;
+
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 28px;
+
+  background: rgba(255,255,255,.84);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 55px rgba(112,65,84,.09),
+    inset 0 1px 0 rgba(255,255,255,.90);
+
+  transition:
+    transform .4s var(--v6-ease),
+    box-shadow .4s;
+}
+
+.v5-home .v5-final__price:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 70px rgba(112,65,84,.15);
+}
+
+.v5-home .v5-final__price > strong {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(48px,5.5vw,74px);
+  letter-spacing: -.045em;
+}
+
+.v5-home .v5-final__features span {
+  font-size: 14px;
+  color: #68565e;
+}
+
+/* ==========================================
+   10. RODAPE MAIS ELEGANTE
+========================================== */
+
+.v5-home .v5-footer {
+  padding: 55px 0;
+
+  background: linear-gradient(
+    125deg,
+    #4c3a44 0%,
+    #58404d 50%,
+    #3e3039 100%
+  );
+
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+.v5-home .v5-footer__inner {
+  gap: 35px;
+}
+
+.v5-home .v5-footer__inner a {
+  transition:
+    color .25s,
+    transform .25s;
+}
+
+.v5-home .v5-footer__inner a:hover {
+  color: #fff;
+  transform: translateX(3px);
+}
+
+/* ==========================================
+   11. RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1050px) {
+  .v5-home .v5-platform__layout,
+  .v5-home .v5-about__layout,
+  .v5-home .v5-mounjaro__layout,
+  .v5-home .v5-final__card {
+    gap: clamp(35px,6vw,65px);
+  }
+}
+
+@media (max-width: 700px) {
+  .v5-home h2 {
+    font-size: clamp(35px,8.5vw,49px);
+    letter-spacing: -.035em;
+  }
+
+  .v5-home .v5-platform,
+  .v5-home .v5-about,
+  .v5-home .v5-food,
+  .v5-home .v5-mounjaro,
+  .v5-home .v5-final {
+    padding: 78px 0;
+  }
+
+  .v5-home .v5-everyday > span {
+    min-height: 58px;
+    padding: 13px 16px;
+  }
+
+  .v5-home .v5-recipes-grid {
+    gap: 17px;
+  }
+
+  .v5-home .v5-recipes-grid img {
+    height: 190px;
+    max-height: 190px;
+  }
+
+  .v5-home .v5-final__card {
+    border-radius: 26px;
+    padding: 30px 22px;
+  }
+
+  .v5-home .v5-final__price {
+    border-radius: 22px;
+  }
+
+  .v5-home .v5-primary-button,
+  .v5-home .v5-outline-button {
+    min-height: 50px;
+    padding: 13px 22px;
+  }
+
+  .v5-home .v5-floating-note {
+    padding: 10px 12px;
+  }
+}
+
+/* ==========================================
+   12. ACESSIBILIDADE E PERFORMANCE
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .v5-home *,
+  .v5-home *::before,
+  .v5-home *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .v5-home .v5-floating-note,
+  .v5-home .v5-everyday > span,
+  .v5-home .v5-final__price {
+    background: #fff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* EQUILIBRIO PREMIUM V6 END */
+/* LOGO OFICIAL DO FOOTER */
+.v5-footer__brand {
+  display: flex;
+  align-items: center;
+}
+
+.v5-footer__brand a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.v5-footer__logo {
+  display: block;
+  width: 170px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .v5-footer__brand {
+    justify-content: center;
+  }
+
+  .v5-footer__logo {
+    width: 155px;
+  }
+}

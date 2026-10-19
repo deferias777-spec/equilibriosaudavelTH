@@ -1,0 +1,137 @@
+.modal-backdrop{position:fixed;inset:0;background:#24182099;display:flex;align-items:center;justify-content:center;padding:16px;z-index:100}.recipe-detail{position:relative;width:min(720px,100%);max-height:92vh;overflow:auto}
+
+/* RECIPE MODAL FIX V1 START */
+
+/* Camada de fundo */
+.recipe-modal-overlay,
+.recipe-detail-overlay,
+.recipe-overlay,
+.modal-overlay:has(.recipe-detail),
+.modal-backdrop:has(.recipe-detail) {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 24px !important;
+
+  overflow-y: auto !important;
+
+  background: rgba(43, 31, 39, .65) !important;
+
+  backdrop-filter: blur(9px) !important;
+  -webkit-backdrop-filter: blur(9px) !important;
+}
+
+/* Janela de receita */
+.recipe-modal,
+.recipe-detail-modal,
+.recipe-detail-content,
+.recipe-detail,
+.recipe-modal-content {
+  position: relative;
+
+  width: min(100%, 680px) !important;
+  max-width: 680px !important;
+  max-height: calc(100dvh - 48px) !important;
+
+  margin: auto !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  border: 1px solid rgba(255,255,255,.75) !important;
+  border-radius: 25px !important;
+
+  background: #fffdfc !important;
+
+  box-shadow:
+    0 35px 100px rgba(35,20,29,.30),
+    0 0 0 1px rgba(170,100,130,.08) !important;
+
+  scrollbar-width: thin;
+  scrollbar-color: #c48aa0 transparent;
+}
+
+/* Imagem editorial */
+.recipe-modal > img,
+.recipe-detail-modal > img,
+.recipe-detail-content > img,
+.recipe-detail > img,
+.recipe-modal-content > img {
+  display: block;
+  width: 100%;
+  height: clamp(180px,25vh,270px);
+  object-fit: cover;
+}
+
+/* Titulos proporcionais */
+.recipe-modal h1,
+.recipe-detail-modal h1,
+.recipe-detail-content h1,
+.recipe-detail h1,
+.recipe-modal-content h1 {
+  font-size: clamp(30px,4vw,46px) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -.035em !important;
+  overflow-wrap: anywhere;
+}
+
+/* Espacamento do texto */
+.recipe-modal p,
+.recipe-detail-modal p,
+.recipe-detail-content p,
+.recipe-detail p,
+.recipe-modal-content p,
+.recipe-modal li,
+.recipe-detail-modal li,
+.recipe-detail-content li,
+.recipe-detail li,
+.recipe-modal-content li {
+  line-height: 1.8;
+}
+
+/* Botao de fechar existente */
+.recipe-modal button[aria-label*="echar"],
+.recipe-detail-modal button[aria-label*="echar"],
+.recipe-detail-content button[aria-label*="echar"],
+.recipe-detail button[aria-label*="echar"],
+.recipe-modal-content button[aria-label*="echar"] {
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+}
+
+/* Telas pequenas */
+@media (max-width: 700px) {
+  .recipe-modal-overlay,
+  .recipe-detail-overlay,
+  .recipe-overlay,
+  .modal-overlay:has(.recipe-detail),
+  .modal-backdrop:has(.recipe-detail) {
+    padding: 12px !important;
+  }
+
+  .recipe-modal,
+  .recipe-detail-modal,
+  .recipe-detail-content,
+  .recipe-detail,
+  .recipe-modal-content {
+    width: 100% !important;
+    max-height: calc(100dvh - 24px) !important;
+    border-radius: 19px !important;
+  }
+
+  .recipe-modal > img,
+  .recipe-detail-modal > img,
+  .recipe-detail-content > img,
+  .recipe-detail > img,
+  .recipe-modal-content > img {
+    height: 190px !important;
+  }
+}
+
+/* RECIPE MODAL FIX V1 END */

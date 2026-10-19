@@ -1,0 +1,93 @@
+node_modules/
+dist/
+.env
+.vercel
+*.log
+
+# Dependencias e builds
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+
+# Credenciais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+
+# Backups e relatorios locais
+backup-*/
+*.backup-*
+*.bak-*
+*.bak
+*.log
+AUDITORIA-FUNCIONAL.txt
+
+# Arquivos locais
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Arquivos privados
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+.env.*.local
+
+# Dependencias e builds
+node_modules/
+dist/
+build/
+
+# Backups
+backup-*/
+*.backup-*
+*.bak
+*.bak-*
+
+# Relatorios locais
+AUDITORIA-FUNCIONAL.txt
+
+# Chaves
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Credenciais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencias
+node_modules/
+dist/
+build/
+
+# Backups
+backup-*/
+*.backup-*
+*.bak
+*.bak-*
+*.log
+
+# Auditorias
+AUDITORIA-FUNCIONAL.txt
+
+# Dados locais
+*.sqlite
+*.sqlite3

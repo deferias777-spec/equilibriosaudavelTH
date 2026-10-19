@@ -1,0 +1,238 @@
+/* Equilibrio Saudavel - Jornada Premium */
+
+.es-journey-premium {
+  --journey-ink: #503e4b;
+  --journey-muted: #937f8c;
+  --journey-accent: #a96f99;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding-bottom: 35px;
+}
+
+.es-journey-premium *,
+.es-journey-premium *::before,
+.es-journey-premium *::after {
+  box-sizing: border-box;
+}
+
+.es-journey-hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  overflow: hidden;
+  min-height: 225px;
+  margin-bottom: 25px;
+  padding: 38px 42px;
+  border: 1px solid rgba(180, 120, 159, .2);
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(211, 165, 244, .36),
+      transparent 40%
+    ),
+    linear-gradient(
+      120deg,
+      #fff8fc,
+      #f5e9f9
+    );
+  box-shadow: 0 18px 48px rgba(108, 62, 96, .06);
+}
+
+.es-journey-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+
+.es-journey-eyebrow {
+  display: inline-block;
+  color: #b17ba1;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.es-journey-hero h2 {
+  margin: 15px 0;
+  color: #523d4b;
+  font-family: Georgia, serif;
+  font-size: clamp(29px, 3.7vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -.03em;
+}
+
+.es-journey-hero h2 em {
+  color: #ad739f;
+  font-weight: 400;
+}
+
+.es-journey-hero p {
+  max-width: 490px;
+  color: #927d8b;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.es-journey-hero-art {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 125px;
+  height: 125px;
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 34px;
+  background: rgba(255,255,255,.55);
+  color: #ab78a0;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 18px 50px rgba(128,76,121,.12);
+}
+
+.es-journey-intro-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 16px;
+  margin-bottom: 27px;
+}
+
+.es-journey-intro-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  min-width: 0;
+  padding: 21px;
+  border: 1px solid #efdeea;
+  border-radius: 21px;
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 12px 35px rgba(103,58,90,.045);
+}
+
+.es-journey-intro-card > svg {
+  flex-shrink: 0;
+  color: #ac78a0;
+}
+
+.es-journey-intro-card strong {
+  display: block;
+  color: #604958;
+  font-size: 13px;
+}
+
+.es-journey-intro-card p {
+  margin-top: 7px;
+  color: #9b8794;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.es-journey-content {
+  min-width: 0;
+}
+
+/* Refinamento dos componentes existentes */
+
+.es-journey-content .card-surface {
+  border: 1px solid #ebdbe6;
+  border-radius: 24px;
+  background: rgba(255,255,255,.94);
+  box-shadow:
+    0 16px 45px rgba(104,62,92,.055),
+    inset 0 1px 0 rgba(255,255,255,.85);
+  backdrop-filter: blur(16px);
+}
+
+.es-journey-content button {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.es-journey-content button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.es-journey-content input,
+.es-journey-content textarea,
+.es-journey-content select {
+  max-width: 100%;
+  border-radius: 13px;
+}
+
+.es-journey-content input:focus,
+.es-journey-content textarea:focus,
+.es-journey-content select:focus {
+  outline-color: #b17ca3;
+}
+
+.es-journey-content img {
+  max-width: 100%;
+}
+
+.es-journey-content h2,
+.es-journey-content h3 {
+  letter-spacing: -.025em;
+}
+
+.es-journey-content [class*="badge"],
+.es-journey-content [class*="trophy"],
+.es-journey-content [class*="achievement"] {
+  transition: transform .22s ease;
+}
+
+.es-journey-content [class*="badge"]:hover,
+.es-journey-content [class*="trophy"]:hover,
+.es-journey-content [class*="achievement"]:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 900px) {
+  .es-journey-intro-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .es-journey-hero {
+    min-height: 0;
+    padding: 28px 22px;
+    border-radius: 22px;
+  }
+
+  .es-journey-hero-art {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 90px;
+    height: 90px;
+    opacity: .17;
+  }
+
+  .es-journey-intro-card {
+    padding: 17px;
+    border-radius: 17px;
+  }
+
+  .es-journey-content .card-surface {
+    border-radius: 19px;
+  }
+
+  .es-journey-content button {
+    max-width: 100%;
+  }
+
+  .es-journey-content .grid {
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .es-journey-content *,
+  .es-journey-intro-card {
+    transition: none !important;
+    animation: none !important;
+  }
+}

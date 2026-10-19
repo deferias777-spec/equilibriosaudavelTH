@@ -1,0 +1,250 @@
+/* Equilibrio Saudavel - Espaco Social Premium */
+body:has(.es-member-shell) > #root > header,
+body:has(.es-member-shell) #root > header {
+  display:none!important;
+}
+.es-member-shell{padding-top:16px!important}
+.es-old-dashboard-greeting{display:none!important}
+.es-member-top{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:16px;padding:14px 22px;margin-bottom:25px;
+  background:#fff;border:1px solid #f1dfe5;border-radius:22px;
+  box-shadow:0 10px 35px #493c420a
+}
+.es-member-brand{display:flex;align-items:center;gap:15px;
+  text-decoration:none;color:#493c42;font-weight:700}
+.es-member-brand img{width:65px;height:48px;object-fit:contain}
+.es-member-top-actions{display:flex;gap:10px}
+.es-member-top-actions button{
+  display:flex;align-items:center;gap:8px;padding:11px 17px;
+  border:1px solid #ecd9e1;border-radius:50px;
+  background:#fff;color:#92536d;font-weight:650
+}
+.es-member-profile{
+  background:linear-gradient(145deg,#fff,#fff7fa);
+  border:1px solid #f2e1e7;border-radius:28px;
+  padding:34px;margin-bottom:32px;
+  box-shadow:0 14px 45px #493c420b
+}
+.es-member-profile-main{display:flex;align-items:center;gap:35px}
+.es-member-photo{
+  flex-shrink:0;width:155px;height:155px;padding:5px;
+  border:3px solid #b56989;border-radius:50%;
+  display:grid;place-items:center;background:#f6dce5
+}
+.es-member-photo img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.es-member-photo span{font-size:58px;color:#92536d}
+.es-eyebrow{text-transform:uppercase;letter-spacing:2px;
+  color:#b06d89;font-size:11px;font-weight:750}
+.es-member-profile-info h2{font-size:clamp(27px,4vw,43px);
+  color:#493c42;margin:6px 0}
+.es-member-profile-info p{color:#806e77}
+.es-profile-stats{display:flex;flex-wrap:wrap;gap:25px;margin:18px 0;color:#66575e}
+.es-profile-stats b{color:#493c42}
+.es-profile-buttons{display:flex;flex-wrap:wrap;gap:10px}
+.es-profile-buttons a,.es-profile-buttons button{
+  display:inline-flex;align-items:center;gap:9px;
+  background:#a35e7a;color:#fff;padding:12px 20px;
+  border-radius:30px;font-weight:650;text-decoration:none
+}
+.es-profile-buttons button{background:#f5e6ed;color:#8d4e69}
+.es-highlights{display:flex;gap:20px;flex-wrap:wrap;
+  margin-top:30px;padding-top:25px;border-top:1px solid #f0e3e7}
+.es-highlights>button{width:115px;text-align:center;color:#594951}
+.es-highlight-circle{width:88px;height:88px;border:2px solid #c98da5;
+  padding:5px;border-radius:50%;display:grid;place-items:center;
+  margin:0 auto 8px;background:#fff;color:#ad6684;overflow:hidden}
+.es-highlight-circle img{width:100%;height:100%;
+  border-radius:50%;object-fit:cover}
+.es-highlights>button span{display:block;font-size:12px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.es-highlights-empty{display:flex;align-items:center;gap:14px;
+  flex-wrap:wrap;color:#8b7580;font-size:13px}
+.es-highlights-empty .es-highlight-circle{margin:0}
+.es-highlights-empty button{color:#a35e7a;font-weight:700}
+.es-social{max-width:900px;margin:0 auto}
+.es-social-intro h2{font-size:clamp(25px,4vw,37px);color:#493c42}
+.es-social-intro p{color:#8b7580;margin:7px 0 20px}
+.es-social-switch{display:grid;grid-template-columns:1fr 1fr;
+  background:#f6e8ee;padding:6px;border-radius:18px;
+  gap:6px;margin-bottom:24px}
+.es-social-switch button{display:flex;justify-content:center;
+  align-items:center;gap:10px;padding:14px 12px;
+  border-radius:14px;font-weight:700;color:#91667a}
+.es-social-switch button.selected{background:#fff;color:#934f6e;
+  box-shadow:0 3px 12px #493c4210}
+.es-compose,.es-post,.es-empty{
+  background:#fff;border:1px solid #f0e1e7;
+  border-radius:23px;padding:24px;margin-bottom:22px;
+  box-shadow:0 9px 30px #493c4208
+}
+.es-compose-title{display:flex;align-items:center;gap:12px;
+  color:#9e5c78;margin-bottom:18px}
+.es-compose-title div{display:grid;gap:2px}
+.es-compose-title span{font-size:13px;color:#9a8b92}
+.es-compose input,.es-compose textarea{
+  display:block;width:100%;border:1px solid #eadce2;
+  background:#fffafd;border-radius:13px;padding:13px 15px;
+  margin-bottom:12px;color:#493c42;outline-color:#b97b98
+}
+.es-publish{display:flex;align-items:center;justify-content:center;
+  gap:9px;background:#a35e7a;color:#fff;border-radius:50px;
+  padding:13px 22px;font-weight:700}
+.es-publish:disabled{opacity:.6}
+.es-feed-heading{display:flex;justify-content:space-between;
+  align-items:center;margin:28px 0 15px;color:#493c42}
+.es-feed-heading h3{font-size:23px}
+.es-post-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.es-avatar{width:49px;height:49px;border-radius:50%;
+  display:grid;place-items:center;background:#f5dce6;
+  color:#965b77;font-weight:750;overflow:hidden}
+.es-avatar img{width:100%;height:100%;object-fit:cover}
+.es-post-author{flex:1;display:grid;gap:3px;color:#493c42}
+.es-post-author span{font-size:12px;color:#99848e}
+.es-post-head>a,.es-post-head>button{color:#a46b85}
+.es-post h3{font-size:22px;color:#493c42;margin-bottom:10px}
+.es-post-caption{white-space:pre-wrap;color:#66565e;margin-bottom:15px}
+.es-post-photo{width:100%;max-height:540px;object-fit:cover;
+  border-radius:16px;margin-bottom:16px}
+.es-post-actions{display:flex;justify-content:space-between;
+  border-top:1px solid #f1e7eb;padding-top:16px;color:#9d7f8d}
+.es-post-actions button{display:flex;align-items:center;gap:8px}
+.es-post-actions button.liked{color:#c24d79}
+.es-empty{text-align:center;padding:55px 25px;color:#a46b85}
+.es-empty svg{margin:0 auto 12px}
+.es-empty h3{font-size:21px;color:#493c42}
+.es-empty p{color:#8b7580;margin-top:8px}
+.es-social-error{color:#b3264d;margin:12px 0}
+@media(max-width:640px){
+  .es-member-top{padding:12px}
+  .es-member-brand span{display:none}
+  .es-member-top-actions button{padding:10px;font-size:12px}
+  .es-member-profile{padding:22px}
+  .es-member-profile-main{flex-direction:column;text-align:center;gap:18px}
+  .es-member-photo{width:125px;height:125px}
+  .es-profile-stats,.es-profile-buttons{justify-content:center}
+  .es-highlights{justify-content:center}
+  .es-social-switch button{font-size:12px}
+  .es-compose,.es-post{padding:17px}
+}
+/* Upload de receitas - identidade Equilibrio Saudavel */
+.es-upload-area {
+  margin: 18px 0 20px;
+}
+
+.es-upload-picker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+  border: 1.5px dashed #c78ba4;
+  border-radius: 20px;
+  background: linear-gradient(125deg, #fffafd, #f8eaf0);
+  color: #9e5b78;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.es-upload-picker:hover,
+.es-upload-picker:focus-within {
+  border-color: #a35e7a;
+  background: #f6e3eb;
+  box-shadow: 0 8px 24px #a35e7a12;
+}
+
+.es-upload-icon {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #efd9e3;
+}
+
+.es-upload-description {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.es-upload-description strong {
+  color: #704459;
+  font-size: 15px;
+}
+
+.es-upload-description small {
+  color: #947b87;
+  font-size: 12px;
+}
+
+.es-upload-action {
+  background: #a35e7a;
+  color: white;
+  padding: 11px 16px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.es-upload-native {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+}
+
+.es-upload-preview {
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #edd9e2;
+  border-radius: 18px;
+  background: #fffafd;
+}
+
+.es-upload-preview img {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f6e8ee;
+}
+
+.es-upload-preview-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px 2px;
+  color: #987b88;
+  font-size: 12px;
+}
+
+.es-upload-preview-footer button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #f2dce6;
+  color: #94516f;
+  border-radius: 30px;
+  padding: 9px 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .es-upload-picker {
+    flex-wrap: wrap;
+    padding: 17px;
+    gap: 12px;
+  }
+
+  .es-upload-action {
+    width: 100%;
+    text-align: center;
+  }
+}

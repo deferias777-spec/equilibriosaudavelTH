@@ -1,0 +1,100 @@
+.member-lux-footer {
+  margin-top: 65px;
+  padding: 38px 42px 22px;
+  border: 1px solid rgba(178, 120, 155, .18);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 95% 0%, rgba(230, 180, 245, .24), transparent 42%),
+    linear-gradient(130deg, rgba(255,255,255,.93), rgba(255,245,251,.85));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 22px 55px rgba(114, 62, 93, .06);
+}
+
+.member-lux-footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 32px;
+}
+
+.member-lux-footer-brand {
+  display: block;
+  color: #573f4c;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.member-lux-footer-brand em {
+  color: #b06e96;
+  font-weight: 400;
+}
+
+.member-lux-footer-main p {
+  max-width: 410px;
+  margin-top: 12px;
+  color: #927e89;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.member-lux-footer-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 20px;
+  border: 1px solid #ead0df;
+  border-radius: 13px;
+  color: #a4678c;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.member-lux-footer-instagram:hover {
+  transform: translateY(-3px);
+  border-color: #bb8ba9;
+  box-shadow: 0 10px 28px rgba(158, 96, 136, .12);
+}
+
+.member-lux-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #efdfeb;
+  color: #a08b98;
+  font-size: 11px;
+}
+
+.member-lux-footer-bottom span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media(max-width:700px) {
+  .member-lux-footer {
+    padding: 26px 20px;
+    margin-top: 40px;
+    border-radius: 22px;
+  }
+
+  .member-lux-footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .member-lux-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

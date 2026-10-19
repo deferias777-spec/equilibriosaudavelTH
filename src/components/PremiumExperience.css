@@ -1,0 +1,306 @@
+/* Equilibrio Saudavel - Premium Experience */
+.es-member-shell{
+  max-width:1320px;
+  margin-inline:auto;
+  padding-inline:clamp(14px,3vw,40px);
+}
+
+.es-member-shell .btn{
+  min-height:46px;
+  padding:11px 19px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.25;
+  white-space:normal;
+  text-align:center;
+  transition:transform .2s,box-shadow .2s;
+}
+
+.es-member-shell .btn:hover{
+  transform:translateY(-2px);
+}
+
+.es-member-shell .card-surface{
+  border:1px solid rgba(184,121,148,.16);
+  border-radius:26px;
+  background:rgba(255,255,255,.91);
+  box-shadow:0 14px 45px rgba(73,60,66,.055);
+}
+
+.es-luxe-card{
+  padding:clamp(22px,4vw,38px);
+  border:1px solid rgba(190,131,156,.24);
+  border-radius:28px;
+  background:linear-gradient(
+    135deg,rgba(255,255,255,.96),rgba(255,246,250,.91)
+  );
+  box-shadow:0 20px 65px rgba(91,56,72,.075);
+  backdrop-filter:blur(14px);
+}
+
+.es-tool-heading{
+  display:flex;
+  align-items:center;
+  gap:17px;
+  margin-bottom:30px;
+}
+
+.es-tool-icon{
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  width:58px;
+  height:58px;
+  border-radius:19px;
+  color:#a35e7a;
+  background:#f6e3eb;
+  box-shadow:0 0 22px rgba(197,117,155,.12);
+}
+
+.es-kicker{
+  font-size:11px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  font-weight:750;
+  color:#ae708a;
+}
+
+.es-tool-heading h2{
+  margin:5px 0;
+  font-family:Georgia,serif;
+  font-size:clamp(23px,3vw,33px);
+  color:#493c42;
+}
+
+.es-tool-heading p{
+  font-size:13px;
+  color:#927c86;
+}
+
+.es-measure-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.es-measure-grid label{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+  min-width:0;
+}
+
+.es-measure-grid label>span{
+  font-size:13px;
+  font-weight:700;
+  color:#67515d;
+}
+
+.es-measure-grid input{
+  width:100%;
+  min-height:49px;
+  padding:12px 15px;
+  border:1px solid #ead4df;
+  border-radius:15px;
+  background:#fffafd;
+  outline-color:#ad6e8b;
+  color:#493c42;
+}
+
+.es-luxe-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:49px;
+  padding:12px 22px;
+  border-radius:15px;
+  background:linear-gradient(110deg,#bb8199,#975672);
+  color:#fff;
+  font-size:13px;
+  font-weight:750;
+  box-shadow:0 9px 22px rgba(156,89,119,.16);
+}
+
+.es-calc-result{
+  margin-top:23px;
+  padding:24px;
+  border-radius:19px;
+  background:#f8eaf0;
+  text-align:center;
+  color:#7e4b61;
+}
+
+.es-calc-result span{
+  display:block;
+  font-size:13px;
+}
+
+.es-calc-result strong{
+  display:block;
+  margin:6px 0;
+  font-size:clamp(38px,6vw,58px);
+}
+
+.es-calc-result p,.es-calc-note{
+  font-size:12px;
+  color:#8c7580;
+}
+
+.es-calc-error{
+  color:#b3264d;
+  margin-top:15px;
+}
+
+.es-calc-note{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  margin-top:22px;
+  line-height:1.65;
+}
+
+.es-calc-note svg{flex-shrink:0}
+
+.es-recipe-premium{
+  width:min(760px,100%)!important;
+  max-height:calc(100dvh - 28px)!important;
+  border-radius:26px!important;
+  background:#fff!important;
+  overflow-y:auto;
+}
+
+.es-recipe-cover{position:relative}
+
+.es-recipe-cover>img{
+  display:block;
+  width:100%;
+  height:clamp(200px,32vh,310px);
+  object-fit:cover;
+}
+
+.es-recipe-close{
+  position:absolute;
+  right:18px;
+  top:18px;
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#fff;
+  color:#664653;
+}
+
+.es-recipe-body{
+  padding:clamp(20px,4vw,36px);
+}
+
+.es-recipe-body h2{
+  margin:9px 0 13px;
+  font-family:Georgia,serif;
+  font-size:clamp(26px,4vw,40px);
+  line-height:1.12;
+  color:#493c42;
+}
+
+.es-recipe-description{color:#84717a}
+
+.es-recipe-facts{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 22px;
+  margin:21px 0;
+  font-size:13px;
+  color:#826877;
+}
+
+.es-recipe-facts span{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.es-serving-panel{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:18px;
+  margin:22px 0;
+  border-radius:18px;
+  background:#fbf0f5;
+}
+
+.es-serving-panel strong{color:#654756}
+
+.es-serving-panel p{
+  margin-top:5px;
+  font-size:12px;
+  color:#947c87;
+}
+
+.es-serving-stepper{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-shrink:0;
+}
+
+.es-serving-stepper button{
+  display:grid;
+  place-items:center;
+  width:37px;
+  height:37px;
+  border-radius:50%;
+  background:#fff;
+  color:#9c5b78;
+}
+
+.es-recipe-body h3{
+  margin:26px 0 13px;
+  font-family:Georgia,serif;
+  font-size:23px;
+  color:#493c42;
+}
+
+.es-recipe-ingredients,
+.es-recipe-steps{
+  padding-left:23px;
+  color:#685660;
+  line-height:1.8;
+}
+
+.es-recipe-ingredients{list-style:disc}
+.es-recipe-steps{list-style:decimal}
+
+.es-recipe-tip{
+  padding:19px;
+  margin-top:24px;
+  border-radius:17px;
+  background:#fff4f8;
+  color:#765568;
+}
+
+.es-recipe-tip p{margin-top:7px}
+
+.es-recipe-allergens,
+.es-recipe-caution{
+  margin-top:15px;
+  font-size:12px;
+  line-height:1.6;
+  color:#8a7780;
+}
+
+@media(max-width:640px){
+  .es-measure-grid{grid-template-columns:1fr}
+  .es-tool-heading{align-items:flex-start}
+  .es-serving-panel{flex-wrap:wrap}
+  .es-member-shell .btn{min-height:43px;padding:10px 13px}
+  .es-recipe-premium{max-height:calc(100dvh - 16px)!important}
+}

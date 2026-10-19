@@ -1,0 +1,111 @@
+.recipe-card{overflow:hidden;background:white;border-radius:22px;border:1px solid #f3dce2;transition:transform .2s}.recipe-card:hover{transform:translateY(-5px)}.recipe-image{display:block;width:100%;height:210px;overflow:hidden}.recipe-image img{width:100%;height:100%;object-fit:cover;transition:transform .3s}.recipe-card:hover img{transform:scale(1.05)}
+/* Catalogo premium - Equilibrio Saudavel */
+.es-recipe-card-premium{
+  overflow:hidden;
+  border:1px solid rgba(178,118,143,.17);
+  border-radius:25px;
+  background:rgba(255,255,255,.95);
+  box-shadow:0 14px 35px rgba(73,60,66,.065);
+  transition:transform .2s,box-shadow .2s;
+}
+.es-recipe-card-premium:hover{
+  transform:translateY(-3px);
+  box-shadow:0 19px 43px rgba(73,60,66,.1);
+}
+.es-recipe-photo{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:linear-gradient(135deg,#f8e5ed,#fff8fb);
+}
+.es-recipe-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .3s;
+}
+.es-recipe-photo:hover img{transform:scale(1.04)}
+.es-recipe-no-photo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  height:100%;
+  color:#a56d85;
+}
+.es-recipe-no-photo small{font-size:12px}
+.es-recipe-photo-note{
+  position:absolute;
+  left:13px;
+  bottom:12px;
+  padding:6px 10px;
+  border-radius:20px;
+  background:rgba(255,255,255,.92);
+  color:#8d6073;
+  font-size:10px;
+  font-weight:700;
+}
+.es-recipe-card-content{padding:20px}
+.es-recipe-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.es-recipe-category{
+  color:#a76b85;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.1px;
+  text-transform:uppercase;
+}
+.es-recipe-favorite{
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#fff3f7;
+}
+.es-recipe-card-content h3{
+  margin:12px 0 15px;
+  min-height:54px;
+  color:#493c42;
+  font-family:Georgia,serif;
+  font-size:21px;
+  line-height:1.28;
+}
+.es-recipe-card-info{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  color:#8b7981;
+  font-size:12px;
+}
+.es-recipe-card-info span{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.es-recipe-view{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  width:100%;
+  min-height:44px;
+  margin-top:18px;
+  border-radius:14px;
+  background:linear-gradient(110deg,#b98099,#9c5c78);
+  color:white;
+  font-size:13px;
+  font-weight:750;
+}
+.es-recipe-view:hover{filter:brightness(1.04)}
+@media(max-width:600px){
+  .es-recipe-card-content{padding:16px}
+  .es-recipe-card-content h3{font-size:19px;min-height:0}
+}

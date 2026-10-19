@@ -1,0 +1,1 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {recipes} from '../src/data/recipes.js';test('60 receitas com ingredientes e passos',()=>{assert.equal(recipes.length,60);assert.equal(new Set(recipes.map(r=>r.id)).size,60);for(const r of recipes){assert.ok(r.ingredients.length>=3);assert.ok(r.steps.length>=3)}});

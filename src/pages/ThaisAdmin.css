@@ -1,0 +1,74 @@
+.tp-layout,.tp-login{font-family:'DM Sans',Arial,sans-serif;color:#493c42}
+.tp-layout *,.tp-login *{box-sizing:border-box}
+.tp-layout{display:flex;min-height:85vh;background:#fffbfc}
+.tp-sidebar{width:245px;flex-shrink:0;background:white;border-right:1px solid #f2e2e9;padding:28px 17px;display:flex;flex-direction:column;gap:26px}
+.tp-brand{display:flex;align-items:center;gap:10px}
+.tp-logo{width:43px;height:43px;display:grid;place-items:center;border-radius:14px;background:#fce4ed;color:#a65c7c;font-family:Georgia,serif;font-size:27px}
+.tp-brand strong{font-family:'Playfair Display',Georgia,serif;font-size:17px}
+.tp-brand small{display:block;color:#b093a0;font-size:9px;letter-spacing:1.3px;margin-top:5px}
+.tp-overline{font-size:10px;letter-spacing:2px;color:#b28499;font-weight:800}
+.tp-sidebar nav{display:grid;gap:7px}
+.tp-sidebar nav button{border:0;background:transparent;color:#826d78;text-align:left;padding:13px 15px;border-radius:11px;font-weight:700;cursor:pointer}
+.tp-sidebar nav button.active,.tp-sidebar nav button:hover{background:#f9e9f0;color:#9f5475}
+.tp-bottom{margin-top:auto;border-top:1px solid #f3e7ec;padding-top:20px;display:grid;gap:10px}
+.tp-bottom button{background:none;border:0;text-align:left;color:#aa647e;cursor:pointer;padding:8px 0}
+.tp-main{flex:1;min-width:0;padding:35px clamp(18px,3vw,48px)}
+.tp-header,.tp-panel-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:24px}
+.tp-header h1{font-size:clamp(28px,3vw,40px);margin:7px 0}
+.tp-header p,.tp-panel p,.tp-note{font-size:13px;color:#9a8490}
+.tp-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tp-layout button,.tp-layout select{cursor:pointer}
+.tp-actions button,.tp-actions select,.tp-panel-head button,.tp-pagination button,.tp-scroll button{background:white;border:1px solid #eedce4;border-radius:10px;color:#9b5876;padding:10px 13px}
+.tp-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:17px}
+.tp-cards-five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tp-cards article,.tp-panel{background:white;border:1px solid #f0e1e8;border-radius:19px;box-shadow:0 12px 30px #7651650a}
+.tp-cards article{padding:22px}
+.tp-cards span{display:block;color:#a08996;font-size:12px;font-weight:700}
+.tp-cards strong{display:block;margin-top:13px;font-size:clamp(20px,2.3vw,29px)}
+.tp-panel{padding:24px;margin-bottom:18px;min-width:0}
+.tp-panel h2{font-size:22px;margin:0 0 18px}
+.tp-scroll{overflow:auto}
+.tp-layout table,.tp-modal table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap;font-size:12px}
+.tp-layout th,.tp-modal th{background:#fdf6f9;color:#aa8c9b;font-size:10px;letter-spacing:1px;padding:13px}
+.tp-layout td,.tp-modal td{border-bottom:1px solid #f5eaf0;padding:13px;color:#67525e}
+.tp-layout td strong,.tp-layout td small{display:block}
+.tp-layout td small{color:#a18b97;margin-top:5px}
+.tp-status{display:inline-block;padding:7px 10px;border-radius:30px;background:#f2ebef;color:#806d77;font-size:11px;font-weight:800}
+.tp-ativo,.tp-approved{background:#e5f5eb;color:#287c51}
+.tp-vencendo,.tp-pending{background:#fff0d8;color:#a17422}
+.tp-vencido,.tp-rejected,.tp-failed,.tp-cancelled{background:#ffe7eb;color:#b34e61}
+.tp-search,.tp-form input,.tp-form select,.tp-login-card input{padding:12px;border:1px solid #ecdbe3;border-radius:11px;background:white;color:#493c42}
+.tp-search{width:min(100%,390px);margin-bottom:18px}
+.tp-pagination{display:flex;justify-content:flex-end;align-items:center;gap:10px;margin-top:18px;color:#947c88;font-size:12px}
+.tp-pagination span{margin-right:auto}
+.tp-pagination button:disabled{opacity:.4;cursor:default}
+.tp-columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tp-form{display:grid;gap:15px}
+.tp-form label,.tp-login-card label{display:grid;gap:7px;font-size:12px;font-weight:700;color:#806674}
+.tp-primary{background:#ad6b83!important;color:white!important;border:0!important;border-radius:11px;padding:14px;font-weight:800;cursor:pointer}
+.tp-error{background:#fff0f2;color:#b13e59;padding:13px;border-radius:11px;margin-bottom:18px}
+.tp-error button{float:right;border:0;background:none;color:inherit}
+.tp-login{min-height:80vh;display:grid;place-items:center;padding:25px;background:#fffbfc}
+.tp-login-card{width:min(100%,440px);padding:40px;background:white;border:1px solid #f0dfe6;border-radius:23px;box-shadow:0 20px 55px #80516618;display:grid;gap:17px}
+.tp-login-card h1{font-size:32px;margin:0}
+.tp-login-card p{color:#9c8590;margin:0}
+.tp-overlay{position:fixed;inset:0;z-index:1000;background:#352630aa;display:grid;place-items:center;padding:20px}
+.tp-modal{position:relative;background:white;border-radius:20px;padding:30px;width:min(850px,100%);max-height:85vh;overflow:auto}
+.tp-close{float:right;border:0;background:#f8e9ef;padding:10px;border-radius:9px}
+@media(max-width:1050px){.tp-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.tp-columns{grid-template-columns:1fr}}
+@media(max-width:700px){.tp-layout{display:block}.tp-sidebar{width:100%;padding:15px;gap:12px}.tp-sidebar nav{display:flex;overflow:auto}.tp-sidebar nav button{white-space:nowrap}.tp-bottom,.tp-sidebar>.tp-overline{display:none}.tp-main{padding:20px 12px}.tp-header{display:block}.tp-cards-five{grid-template-columns:repeat(2,minmax(0,1fr))}.tp-cards article{padding:15px}.tp-panel{padding:15px}.tp-panel-head{flex-wrap:wrap}}
+/* Identidade oficial do painel administrativo */
+.tp-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 12px;
+}
+
+.tp-brand-logo {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}

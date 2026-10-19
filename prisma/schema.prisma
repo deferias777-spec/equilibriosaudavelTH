@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String     @id @default(cuid())
+  name        String
+  email       String     @unique
+  password    String
+  role        String     @default("MEMBER")
+  accessUntil DateTime?
+  createdAt   DateTime   @default(now())
+
+  favorites   Favorite[]
+  goals       Goal[]
+  plans       Plan[]
+  purchases   Purchase[]
+}
+
+model Purchase {
+  id                String    @id @default(cuid())
+  email             String
+  amount            Int       @default(2990)
+  status            String    @default("PENDING")
+  paymentId         String?   @unique
+  activationHash    String?   @unique
+  activationExpires DateTime?
+  activatedAt       DateTime?
+  userId            String?
+  createdAt         DateTime  @default(now())
+
+  user User? @relation(fields: [userId], references: [id])
+}
+
+model Favorite {
+  id       String @id @default(cuid())
+  recipeId Int
+  userId   String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, recipeId])
+}
+
+model Goal {
+  id        String  @id @default(cuid())
+  title     String
+  completed Boolean @default(false)
+  userId    String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Plan {
+  id       String @id @default(cuid())
+  day      String
+  meal     String
+  recipeId Int
+  userId   String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, day, meal])
+}

@@ -1,0 +1,336 @@
+/*
+  EQUILIBRIO SAUDAVEL
+  MASTER PREMIUM EXPERIENCE
+  Camada visual nao destrutiva
+*/
+
+:root {
+  --es-rose-50: #fff8fb;
+  --es-rose-100: #fcebf2;
+  --es-rose-200: #f3d7e3;
+  --es-rose-300: #e5b7ca;
+  --es-rose-500: #b97996;
+  --es-rose-600: #a46280;
+  --es-rose-700: #8b4e69;
+  --es-ink: #493c42;
+  --es-muted: #8b7881;
+  --es-border: #efdce5;
+  --es-shadow: 0 16px 45px rgba(85, 48, 67, .07);
+  --es-radius: 22px;
+  --es-radius-lg: 30px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body:has(.es-journey),
+body:has(.es-member-premium),
+body:has(.dashboard-page) {
+  background: #fffbfc;
+}
+
+body:has(.es-journey) button,
+body:has(.es-member-premium) button,
+body:has(.dashboard-page) button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body:has(.es-journey) button:focus-visible,
+body:has(.es-journey) a:focus-visible,
+body:has(.es-journey) input:focus-visible,
+body:has(.es-member-premium) button:focus-visible,
+body:has(.dashboard-page) button:focus-visible {
+  outline: 3px solid #d9a0b9;
+  outline-offset: 3px;
+}
+
+body:has(.es-journey) button,
+body:has(.es-member-premium) button,
+body:has(.dashboard-page) button {
+  transition:
+    background-color .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease;
+}
+
+body:has(.es-journey) :is(h1,h2,h3),
+body:has(.es-member-premium) :is(h1,h2,h3) {
+  letter-spacing: -.025em;
+}
+
+body:has(.es-journey) :is(input,textarea,select),
+body:has(.es-member-premium) :is(input,textarea,select) {
+  max-width: 100%;
+  font-family: inherit;
+}
+
+body:has(.es-journey) :is(input,textarea,select):focus,
+body:has(.es-member-premium) :is(input,textarea,select):focus {
+  border-color: #c78aa5;
+  box-shadow: 0 0 0 4px rgba(199,138,165,.12);
+}
+
+.es-journey {
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-bottom: 55px;
+}
+
+.es-journey-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 90% 5%,rgba(255,255,255,.95),transparent 35%),
+    linear-gradient(120deg,#f4dce6 0%,#fff6fa 70%,#ffffff 100%);
+  border: 1px solid #f0d5e0;
+  box-shadow: var(--es-shadow);
+}
+
+.es-journey-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 230px;
+  height: 230px;
+  right: -90px;
+  bottom: -140px;
+  border: 1px solid rgba(172,105,137,.13);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 34px rgba(255,255,255,.16),
+    0 0 0 70px rgba(255,255,255,.10);
+  pointer-events: none;
+}
+
+.es-journey-summary > div {
+  border: 1px solid rgba(255,255,255,.78);
+  box-shadow: 0 9px 24px rgba(85,48,67,.045);
+  backdrop-filter: blur(8px);
+}
+
+.es-journey-panel {
+  border-color: var(--es-border);
+  box-shadow: var(--es-shadow);
+}
+
+.es-journey-challenge {
+  min-height: 93px;
+  background: #fffbfd;
+}
+
+.es-journey-challenge:not(:disabled):hover {
+  border-color: #d7a6ba;
+  box-shadow: 0 10px 25px rgba(85,48,67,.07);
+}
+
+.es-journey-challenge.done {
+  border-color: #d7a7bc;
+  background: linear-gradient(135deg,#f8eaf0,#fff9fc);
+}
+
+.es-journey-badge {
+  border: 1px solid #f0e5e9;
+}
+
+.es-journey-badge.earned {
+  border-color: #f1d8ad;
+  background: linear-gradient(135deg,#fff5df,#fffaf0);
+  box-shadow: 0 10px 22px rgba(164,113,41,.07);
+}
+
+.es-journey-primary {
+  background: linear-gradient(110deg,#bb7e9a,#9d5977);
+  box-shadow: 0 8px 20px rgba(164,98,128,.18);
+}
+
+.es-journey-primary:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 13px 25px rgba(164,98,128,.23);
+}
+
+.es-journey-privacy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 19px 23px;
+  border: 1px solid #eed7e2;
+  border-radius: 20px;
+  background: linear-gradient(120deg,#fff8fb,#fff);
+  box-shadow: 0 9px 25px rgba(85,48,67,.045);
+}
+
+.es-journey-privacy > div {
+  display: grid;
+  gap: 6px;
+}
+
+.es-journey-privacy strong {
+  color: var(--es-ink);
+  font-size: 14px;
+}
+
+.es-journey-privacy small {
+  color: var(--es-muted);
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+.es-journey-privacy button {
+  flex-shrink: 0;
+  min-width: 110px;
+  min-height: 40px;
+  padding: 9px 16px;
+  border: 1px solid #d9b6c6;
+  border-radius: 99px;
+  background: #fff;
+  color: #945e76;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.es-journey-privacy button[aria-pressed="true"] {
+  background: #a46280;
+  border-color: #a46280;
+  color: #fff;
+}
+
+.es-journey-privacy button:disabled {
+  opacity: .55;
+  cursor: wait;
+}
+
+.es-recipe-card-premium {
+  border-radius: 25px !important;
+  border-color: var(--es-border) !important;
+  box-shadow: var(--es-shadow) !important;
+}
+
+.es-recipe-card-premium .es-recipe-photo {
+  background: linear-gradient(135deg,#f8e8ee,#fff9fb);
+}
+
+.es-recipe-card-premium .es-recipe-view {
+  border-radius: 13px;
+  background: linear-gradient(110deg,#b98099,#9c5c78);
+}
+
+.es-recipe-card-premium .es-recipe-view:hover {
+  box-shadow: 0 9px 22px rgba(156,92,120,.2);
+}
+
+.es-recipe-card-premium img {
+  display: block;
+  max-width: 100%;
+}
+
+.es-recipe-card-premium .es-recipe-no-photo {
+  min-height: 170px;
+}
+
+body:has(.es-journey) ::selection {
+  background: #efd0dd;
+  color: #493c42;
+}
+
+@media (max-width: 850px) {
+  .es-journey {
+    gap: 18px;
+  }
+
+  .es-journey-hero,
+  .es-journey-panel {
+    border-radius: 23px;
+  }
+
+  .es-journey-summary {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .es-journey {
+    gap: 15px;
+    padding-bottom: 35px;
+  }
+
+  .es-journey-hero {
+    padding: 25px 19px;
+  }
+
+  .es-journey-hero h2 {
+    font-size: 34px;
+  }
+
+  .es-journey-panel {
+    padding: 21px 16px;
+  }
+
+  .es-journey-summary {
+    gap: 7px;
+  }
+
+  .es-journey-summary > div {
+    padding: 12px 9px;
+    border-radius: 14px;
+  }
+
+  .es-journey-summary strong {
+    font-size: 25px;
+  }
+
+  .es-journey-summary span {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .es-journey-section-title {
+    align-items: flex-start;
+  }
+
+  .es-journey-section-title h3 {
+    font-size: 25px;
+  }
+
+  .es-journey-challenge {
+    padding: 14px 12px;
+  }
+
+  .es-journey-privacy {
+    padding: 16px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .es-journey-privacy button {
+    width: 100%;
+  }
+
+  .es-journey-history-row {
+    align-items: flex-start;
+  }
+
+  .es-journey-history-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .es-journey *,
+  .es-recipe-card-premium * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}

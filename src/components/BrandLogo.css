@@ -1,0 +1,31 @@
+.es-brand-logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 60px;
+  object-fit: contain;
+  object-position: left center;
+  flex-shrink: 0;
+}
+
+.es-brand-logo--small {
+  height: 42px;
+}
+
+.es-brand-logo--large {
+  height: 95px;
+}
+
+@media (max-width: 600px) {
+  .es-brand-logo {
+    height: 47px;
+  }
+
+  .es-brand-logo--small {
+    height: 36px;
+  }
+
+  .es-brand-logo--large {
+    height: 75px;
+  }
+}

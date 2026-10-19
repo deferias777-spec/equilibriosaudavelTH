@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');@tailwind base;@tailwind components;@tailwind utilities;:root{--pink:#FDB4BF;--ink:#493C42}body{margin:0;background:#fffbfc;color:var(--ink);font-family:'DM Sans',sans-serif}h1,h2,h3{font-family:'Playfair Display',serif}button,input,select{font:inherit}button{cursor:pointer}a{text-decoration:none}.container-custom{max-width:1180px;margin:auto;padding:0 24px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:100px;padding:13px 24px;font-weight:700;transition:.2s;background:#ad6b83;color:white}.btn:hover{filter:brightness(.93);transform:translateY(-1px)}.btn-light{background:white;color:#ad6b83;border:1px solid #f3dce2}.field{border:1px solid #e9d6dc;padding:13px 16px;border-radius:14px;width:100%;outline-color:#ad6b83;background:white}.section-title{font-size:clamp(32px,4vw,52px);line-height:1.15}.card-surface{background:white;border:1px solid #f3dce2;border-radius:24px;box-shadow:0 12px 38px #ad6b8310}
+
+/* === EQUILIBRIO PREMIUM DESIGN SYSTEM V1 === */
+
+/* 01 - PALETA E TOKENS */
+
+:root {
+  --pink: #fdb4bf;
+  --ink: #493c42;
+
+  --es-bg: #fffafb;
+  --es-paper: #ffffff;
+  --es-blush: #f8ebef;
+  --es-blush-deep: #f0dce3;
+
+  --es-rose: #b77991;
+  --es-rose-dark: #96556e;
+  --es-plum: #493c42;
+
+  --es-text-muted: #87777f;
+  --es-line: rgba(165, 105, 127, .17);
+
+  --es-glass: rgba(255, 255, 255, .72);
+
+  --es-shadow:
+    0 18px 55px rgba(112, 64, 83, .065),
+    0 3px 12px rgba(112, 64, 83, .025);
+
+  --es-shadow-hover:
+    0 25px 65px rgba(112, 64, 83, .12),
+    0 6px 20px rgba(112, 64, 83, .045);
+
+  --es-radius: 26px;
+
+  --es-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* 02 - BASE */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--es-bg);
+  color: var(--es-plum);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(
+      ellipse 42% 32% at 7% 12%,
+      rgba(253, 180, 191, .13),
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 38% 30% at 93% 50%,
+      rgba(189, 127, 153, .09),
+      transparent 75%
+    );
+}
+
+::selection {
+  background: #edc5d2;
+  color: #493c42;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--es-plum);
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+
+h1 {
+  letter-spacing: -.045em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(183, 121, 145, .65);
+  outline-offset: 4px;
+}
+
+/* 03 - LARGURA E RITMO */
+
+.container-custom {
+  width: min(100%, 1440px);
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 64px);
+}
+
+.section-title {
+  font-size: clamp(34px, 4.5vw, 66px);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -.04em;
+}
+
+section {
+  position: relative;
+  isolation: isolate;
+}
+
+/* 04 - TRANSICOES SUAVES ENTRE SECOES */
+
+/* A cor de fundo continua pertencendo a cada componente.
+   Este acabamento evita bordas visualmente duras. */
+
+section[class*="bg-soft"],
+section[class*="bg-[#fff"],
+section[class*="bg-[#f"] {
+  background-image:
+    radial-gradient(
+      ellipse 65% 80% at 95% 5%,
+      rgba(255, 255, 255, .48),
+      transparent 78%
+    );
+}
+
+main > section + section {
+  border-top-color: transparent;
+}
+
+/* Acabamento difuso nas secoes premium da Home */
+
+.v5-home section,
+.v5-home > section {
+  border-color: rgba(183, 121, 145, .08);
+}
+
+.v5-home {
+  background:
+    radial-gradient(
+      ellipse 40% 16% at 85% 18%,
+      rgba(248, 215, 225, .20),
+      transparent 90%
+    ),
+    linear-gradient(
+      180deg,
+      #fffafb 0%,
+      #fffefe 38%,
+      #fff9fa 72%,
+      #fffafb 100%
+    );
+}
+
+/* 05 - CARDS PREMIUM */
+
+.card-surface {
+  position: relative;
+  background: var(--es-glass);
+  border: 1px solid rgba(255, 255, 255, .84);
+  border-radius: var(--es-radius);
+  box-shadow: var(--es-shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition:
+    transform .35s var(--es-ease),
+    box-shadow .35s var(--es-ease),
+    border-color .35s ease;
+}
+
+.card-surface:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--es-shadow-hover);
+  border-color: rgba(183, 121, 145, .26);
+}
+
+.card-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, .48),
+    transparent 48%
+  );
+  opacity: .55;
+}
+
+/* Cards especificos da Home */
+
+.v5-home .v5-recipes-grid > *,
+.v5-home .v5-everyday > *,
+.v5-home [class*="feature-card"],
+.v5-home [class*="benefit-card"] {
+  transition:
+    transform .35s var(--es-ease),
+    box-shadow .35s var(--es-ease),
+    border-color .35s ease;
+}
+
+@media (hover: hover) {
+  .v5-home .v5-recipes-grid > *:hover,
+  .v5-home .v5-everyday > *:hover,
+  .v5-home [class*="feature-card"]:hover,
+  .v5-home [class*="benefit-card"]:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--es-shadow-hover);
+  }
+}
+
+/* 06 - BOTOES */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+
+  min-height: 48px;
+  padding: 13px 25px;
+
+  border-radius: 999px;
+  border: 1px solid transparent;
+
+  background: linear-gradient(
+    115deg,
+    #bf839a 0%,
+    #ad6b83 55%,
+    #95556f 100%
+  );
+
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .005em;
+
+  box-shadow:
+    0 10px 24px rgba(173, 107, 131, .18),
+    inset 0 1px 0 rgba(255, 255, 255, .18);
+
+  transition:
+    transform .28s var(--es-ease),
+    box-shadow .28s ease,
+    filter .28s ease;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, .18) 48%,
+    transparent 75%
+  );
+  transform: translateX(-125%);
+  transition: transform .65s var(--es-ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.035);
+  box-shadow:
+    0 15px 30px rgba(173, 107, 131, .23),
+    0 0 24px rgba(253, 180, 191, .13);
+}
+
+.btn:hover::before {
+  transform: translateX(125%);
+}
+
+.btn:active {
+  transform: translateY(0) scale(.985);
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, .86);
+  border-color: rgba(183, 121, 145, .24);
+  color: var(--es-rose-dark);
+  box-shadow: 0 6px 20px rgba(112, 64, 83, .04);
+}
+
+.btn-light:hover {
+  background: #fff;
+  border-color: rgba(183, 121, 145, .45);
+}
+
+/* Botoes customizados ja existentes */
+
+.official-site-header__subscribe {
+  background: linear-gradient(
+    115deg,
+    #bd8097,
+    #995a74
+  );
+  box-shadow: 0 10px 24px rgba(153, 90, 116, .17);
+}
+
+.official-site-header__subscribe:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+/* 07 - CAMPOS DE FORMULARIO */
+
+.field {
+  width: 100%;
+  min-height: 49px;
+  padding: 13px 16px;
+  border: 1px solid #e9d6dc;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .94);
+  color: var(--es-plum);
+  outline: none;
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.field:focus {
+  border-color: #b77991;
+  background: #fff;
+  box-shadow:
+    0 0 0 4px rgba(183, 121, 145, .12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a99aa0;
+}
+
+/* 08 - IMAGENS E RECEITAS */
+
+.v5-home .v5-recipes-grid img {
+  transition: transform .65s var(--es-ease);
+}
+
+@media (hover: hover) {
+  .v5-home .v5-recipes-grid > *:hover img {
+    transform: scale(1.035);
+  }
+}
+
+.v5-home .v5-recipes-grid > * {
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(183, 121, 145, .14);
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(100, 55, 75, .045);
+}
+
+/* 09 - SUPERFICIES DE VIDRO */
+
+.es-glass {
+  background: rgba(255, 255, 255, .68);
+  border: 1px solid rgba(255, 255, 255, .78);
+  border-radius: 24px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--es-shadow);
+}
+
+.es-glass-rose {
+  background: rgba(250, 235, 240, .73);
+  border: 1px solid rgba(255, 255, 255, .70);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--es-shadow);
+}
+
+/* 10 - BRILHOS ROSADOS DECORATIVOS */
+
+.es-glow {
+  position: relative;
+}
+
+.es-glow::after {
+  content: "";
+  position: absolute;
+  width: min(45vw, 460px);
+  height: min(45vw, 460px);
+  right: -8%;
+  top: -12%;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(253, 180, 191, .20),
+    rgba(183, 121, 145, .065) 42%,
+    transparent 72%
+  );
+  filter: blur(28px);
+}
+
+/* 11 - LINKS */
+
+a {
+  transition:
+    color .2s ease,
+    opacity .2s ease;
+}
+
+a:not(.btn):hover {
+  text-decoration-color: currentColor;
+}
+
+/* 12 - CABECALHO */
+
+.official-site-header {
+  box-shadow: 0 8px 28px rgba(73, 60, 66, .035);
+  border-bottom: 1px solid rgba(183, 121, 145, .10);
+}
+
+.official-site-header__inner {
+  transition: min-height .25s ease;
+}
+
+/* 13 - RODAPE */
+
+footer {
+  position: relative;
+}
+
+footer a {
+  transition: opacity .2s ease;
+}
+
+footer a:hover {
+  opacity: .8;
+}
+
+/* 14 - RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 85px;
+  }
+
+  .container-custom {
+    padding-inline: 20px;
+  }
+
+  .section-title {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .card-surface {
+    border-radius: 22px;
+  }
+
+  .btn {
+    min-height: 46px;
+  }
+
+  .v5-home .v5-recipes-grid > * {
+    border-radius: 20px;
+  }
+}
+
+/* 15 - ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .card-surface,
+  .es-glass,
+  .es-glass-rose {
+    background: #fff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* === FIM EQUILIBRIO PREMIUM DESIGN SYSTEM V1 === */

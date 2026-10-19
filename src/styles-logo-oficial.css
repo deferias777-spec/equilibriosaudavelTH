@@ -1,0 +1,71 @@
+/* IDENTIDADE OFICIAL - REFINAMENTO */
+
+.es-brand-mark {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.es-brand-mark--auth {
+  width: 190px;
+  height: 90px;
+  margin: 4px 0 20px;
+}
+
+.es-brand-mark--checkout {
+  width: 190px;
+  height: 90px;
+  margin: 0 0 20px;
+}
+
+.es-brand-mark--phone {
+  width: 125px;
+  height: 42px;
+  margin: 0 0 12px;
+  object-position: left center;
+}
+
+.es-footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.es-brand-mark--footer {
+  width: 220px;
+  height: 105px;
+  object-position: center;
+}
+
+.es-auth-brand {
+  display: flex;
+  align-items: center;
+}
+
+.es-auth-brand .es-logo-global--auth {
+  width: 190px;
+  height: 90px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .es-brand-mark--auth,
+  .es-brand-mark--checkout {
+    width: 165px;
+    height: 78px;
+  }
+
+  .es-brand-mark--phone {
+    width: 95px;
+    height: 35px;
+  }
+
+  .es-brand-mark--footer {
+    width: 185px;
+    height: 90px;
+  }
+}

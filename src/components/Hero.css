@@ -1,0 +1,471 @@
+.lux-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(115deg, #fdfaf8 0%, #fcf5f5 55%, #f7eae9 100%);
+  scroll-margin-top: 100px;
+}
+
+.lux-hero__ambient {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(95px);
+  pointer-events: none;
+}
+
+.lux-hero__ambient--one {
+  width: 420px;
+  height: 420px;
+  top: -200px;
+  right: 10%;
+  background: rgba(222, 174, 190, .23);
+}
+
+.lux-hero__ambient--two {
+  width: 350px;
+  height: 350px;
+  bottom: -180px;
+  left: -100px;
+  background: rgba(238, 202, 188, .22);
+}
+
+.lux-hero__container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 95px 30px 105px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  align-items: center;
+  gap: clamp(35px, 5vw, 85px);
+}
+
+.lux-hero__content {
+  min-width: 0;
+}
+
+.lux-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #986f7c;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 2.7px;
+  margin-bottom: 28px;
+}
+
+.lux-hero__eyebrow-line {
+  width: 30px;
+  height: 1px;
+  background: #ac7d8b;
+}
+
+.lux-hero__signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: #aa7387;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lux-hero h1 {
+  max-width: 710px;
+  color: #44373c;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(43px, 4.8vw, 75px);
+  font-weight: 400;
+  letter-spacing: -2.9px;
+  line-height: 1.12;
+  margin: 0 0 27px;
+}
+
+.lux-hero h1 span {
+  color: #44373c;
+}
+
+.lux-hero h1 em {
+  color: #a36a7e;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lux-hero__description {
+  max-width: 565px;
+  color: #766970;
+  font-size: 16px;
+  line-height: 1.95;
+  margin-bottom: 28px;
+}
+
+.lux-hero__checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px 18px;
+  margin-bottom: 36px;
+}
+
+.lux-hero__checks span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #77656d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.lux-hero__checks svg {
+  color: #a36a7e;
+}
+
+.lux-hero__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.lux-hero__primary,
+.lux-hero__secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 56px;
+  padding: 15px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 750;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.lux-hero__primary {
+  background: #a46b80;
+  color: #fff;
+  box-shadow: 0 9px 22px rgba(164, 107, 128, .17);
+}
+
+.lux-hero__primary:hover {
+  color: #fff;
+  background: #925a6e;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 27px rgba(164, 107, 128, .25);
+}
+
+.lux-hero__secondary {
+  color: #805d6b;
+  background: rgba(255,255,255,.65);
+  border: 1px solid #ead6dd;
+}
+
+.lux-hero__secondary:hover {
+  color: #805d6b;
+  background: #fff;
+}
+
+.lux-hero__membership {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(164,107,128,.17);
+}
+
+.lux-hero__membership-price,
+.lux-hero__membership-trust span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lux-hero__membership-price strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #4c3d43;
+}
+
+.lux-hero__membership-price > span,
+.lux-hero__membership-trust small {
+  color: #97858c;
+  font-size: 11px;
+}
+
+.lux-hero__membership-divider {
+  width: 1px;
+  height: 38px;
+  background: #e5cfd7;
+}
+
+.lux-hero__membership-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8b6171;
+}
+
+.lux-hero__membership-trust > span {
+  color: #66545d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.lux-hero__membership-trust small {
+  font-weight: 400;
+}
+
+.lux-hero__visual {
+  position: relative;
+  min-width: 0;
+  padding: 18px 30px 25px 0;
+}
+
+.lux-hero__visual-frame {
+  position: relative;
+  height: clamp(440px, 43vw, 600px);
+  overflow: hidden;
+  border-radius: 230px 230px 28px 28px;
+  background: linear-gradient(145deg, #e9d5d2, #f3e8df);
+  box-shadow: 0 30px 65px rgba(113, 72, 84, .12);
+}
+
+.lux-hero__image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lux-hero__visual-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 35px;
+  text-align: center;
+  color: #a06f80;
+}
+
+.lux-hero__visual-fallback span {
+  max-width: 230px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 23px;
+  line-height: 1.45;
+}
+
+.lux-hero__floating-card {
+  position: absolute;
+  z-index: 2;
+  left: -35px;
+  bottom: 75px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 18px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 14px 40px rgba(80,50,60,.12);
+}
+
+.lux-hero__floating-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: #fff0f4;
+  color: #a36a7e;
+}
+
+.lux-hero__floating-card > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lux-hero__floating-card strong {
+  color: #57454d;
+  font-size: 12px;
+}
+
+.lux-hero__floating-card span {
+  color: #9c8a91;
+  font-size: 11px;
+}
+
+.lux-hero__vertical-text {
+  position: absolute;
+  top: 50%;
+  right: -3px;
+  color: #ac8795;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+}
+
+.lux-hero__bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 21px 20px;
+  background: rgba(255,255,255,.55);
+  border-top: 1px solid rgba(164,107,128,.09);
+  color: #a1838e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.lux-hero__bottom-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #cba6b3;
+}
+
+@media (max-width: 1050px) {
+  .lux-hero__container {
+    padding: 75px 25px 85px;
+    gap: 35px;
+  }
+
+  .lux-hero h1 {
+    font-size: clamp(40px, 5vw, 58px);
+  }
+
+  .lux-hero__floating-card {
+    left: -15px;
+  }
+}
+
+@media (max-width: 780px) {
+  .lux-hero__container {
+    grid-template-columns: 1fr;
+    padding: 65px 24px 75px;
+    gap: 45px;
+  }
+
+  .lux-hero__content {
+    text-align: center;
+  }
+
+  .lux-hero__eyebrow,
+  .lux-hero__signature,
+  .lux-hero__checks,
+  .lux-hero__actions,
+  .lux-hero__membership {
+    justify-content: center;
+  }
+
+  .lux-hero__description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lux-hero__visual {
+    width: min(100%, 490px);
+    margin: 0 auto;
+    padding-left: 15px;
+  }
+
+  .lux-hero__visual-frame {
+    height: 490px;
+  }
+
+  .lux-hero__floating-card {
+    left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .lux-hero__container {
+    padding: 48px 20px 60px;
+  }
+
+  .lux-hero__eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .lux-hero h1 {
+    font-size: clamp(38px, 10vw, 49px);
+    letter-spacing: -1.7px;
+  }
+
+  .lux-hero__description {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .lux-hero__checks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lux-hero__actions {
+    flex-direction: column;
+  }
+
+  .lux-hero__primary,
+  .lux-hero__secondary {
+    width: 100%;
+  }
+
+  .lux-hero__membership {
+    gap: 15px;
+  }
+
+  .lux-hero__membership-price strong {
+    font-size: 25px;
+  }
+
+  .lux-hero__visual {
+    padding: 0 15px;
+  }
+
+  .lux-hero__visual-frame {
+    height: 390px;
+    border-radius: 180px 180px 25px 25px;
+  }
+
+  .lux-hero__floating-card {
+    left: 0;
+    bottom: 30px;
+    padding: 12px;
+  }
+
+  .lux-hero__vertical-text {
+    right: -6px;
+    font-size: 8px;
+  }
+
+  .lux-hero__bottom {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lux-hero__primary,
+  .lux-hero__secondary {
+    transition: none;
+  }
+}

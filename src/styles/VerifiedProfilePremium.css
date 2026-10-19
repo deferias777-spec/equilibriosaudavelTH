@@ -1,0 +1,30 @@
+.es-official-verified {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  margin-left: 9px;
+  vertical-align: middle;
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 7px rgba(36,137,237,.22));
+}
+
+.es-official-verified svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+@media(max-width:700px) {
+  .es-official-verified {
+    width: 22px;
+    height: 22px;
+    margin-left: 6px;
+  }
+
+  .es-official-verified svg {
+    width: 20px;
+    height: 20px;
+  }
+}
